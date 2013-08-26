@@ -14,3 +14,4 @@ end
 
 gem 'jquery-rails'
 gem 'slim'
+gem 'devise'
