@@ -15,3 +15,5 @@ end
 gem 'jquery-rails'
 gem 'slim'
 gem 'devise'
+gem 'simple_form'
+gem 'nested_form'

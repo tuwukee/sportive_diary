@@ -14,4 +14,8 @@ SportiveDiary::Application.routes.draw do
     get   "players/sign_up" => "players/registrations#new", :as => :players_signup
     #get   "players/sign_in" => "players/sess#index", :as => :player_signin
   end
+
+  resources :players
+  resources :couches
+  resources :parents
 end
