@@ -1,4 +1,4 @@
-Sportshub::Application.routes.draw do
+SportiveDiary::Application.routes.draw do
 
   devise_for :parents
 

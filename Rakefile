@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Sportshub::Application.load_tasks
+SportiveDiary::Application.load_tasks
