@@ -1,0 +1,11 @@
+en:
+  static:
+    title: "Get your Game on!"
+    subtitle: "Winning isn’t everything, it’s the only thing."
+    sign_up: "New user Sign Up"
+    sign_up_text: "Please, select your role."
+    player: "Player"
+    couch: "Couch"
+    parent: "Parent"
+    sign_in: "Sign In"
+    sign_in_text: "Enter yor creditions."

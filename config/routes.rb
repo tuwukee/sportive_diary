@@ -18,4 +18,6 @@ SportiveDiary::Application.routes.draw do
   resources :players
   resources :couches
   resources :parents
+
+  root :to => 'static#home'
 end
