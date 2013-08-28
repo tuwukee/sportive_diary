@@ -245,5 +245,6 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = "/my_engine/users/auth"
   config.warden do |manager|
     manager.failure_app = CustomFailure
+    manager.default_strategies(scope: :player).unshift :multi_strategy
   end
 end

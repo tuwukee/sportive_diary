@@ -7,7 +7,10 @@
         a.nav-link href="#" target="_self" = t("application.header.sign_up")
         a.nav-link href="#" target="_self" = t("application.header.company")
         a.nav-link href="#" target="_self" = t("application.header.blog")
-        a.nav-link.sign-up href="#" target="_self" = t("application.header.sign_in")
+        - if current_user
+          = link_to t("application.header.sign_out"), sign_out_path, :class => "nav-link sign-up", :method => :delete
+        - else
+          a.nav-link.sign-up href="#" target="_self" = t("application.header.sign_in")
 div
   .hero-bg
     .w-container
