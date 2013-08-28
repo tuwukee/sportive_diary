@@ -20,15 +20,17 @@
               .snippet-title  = t("static.sign_in")
               .snippet-text = t("static.sign_in_text")
               = form_tag sign_in_path do
-                = text_field_tag 'email'
-                = password_field_tag 'password'
-                = submit_tag("Sign In")
+                .s-fields
+                  = label_tag 'email', t("static.email"), :class => "s-label"
+                  = text_field_tag 'email', '', :class => "s-field"
+                  br
+                  = label_tag 'password', t("static.password"), :class => "s-label"
+                  = password_field_tag 'password', '', :class => "s-field"
+                  = submit_tag "Sign In", :class => "button form-btn", :id => "sign_in"
 
 .section.grey
   .w-container
 
-      h4 Action do it
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus
-        | id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+      h4 = t("static.about")
+      p = t("static.about_text")
 

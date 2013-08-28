@@ -4,6 +4,10 @@ body
   font-size: 12px
   line-height: 20px
 
+input:-webkit-autofill, input:focus:-webkit-autofill
+  -webkit-box-shadow: 0 0 0px 1000px white inset
+
+
 h1
   display: inline-block
   margin: 50px 0px 11px
@@ -68,9 +72,14 @@ a:hover, a:focus
   text-decoration: none
   color: white
 
+a.footer-link:hover, a.footer-link:focus
+  text-decoration: none
+  color: #00BEEE
+
 .button
   float: left
   display: inline-block
+  border: none
   padding: 12px 31px
   border-radius: 5px
   background-color: black
@@ -102,6 +111,36 @@ a:hover, a:focus
   margin-left: auto
   margin-right: auto
   max-width: 940px
+
+.s-fields
+  margin-top: 38px
+
+.s-field
+  height: 30px
+  padding-left: 8px
+  padding-right: 8px
+  margin-bottom: 10px
+  width: 50%
+  border-radius: 5px
+  border: 1px solid #dadada
+
+.s-field:focus
+  outline: none
+  border-color: #7CB4DF
+  box-shadow: 0 0 5px #7CB4DF
+
+.s-label
+  display: inline-block
+  margin-left: 5%
+  width: 30%
+
+.form-btn
+  text-aligin: center
+  font-size: 12px
+  float: right
+
+#sign_in
+  margin-right: 15%
 
 .nav-link
   margin-right: 5px
@@ -205,6 +244,7 @@ a:hover, a:focus
 
 .snippet-text-section
   padding: 10px 12px 40px
+  height: 270px
 
 .snippet-title
   margin-bottom: 7px
