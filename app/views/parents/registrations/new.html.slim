@@ -4,9 +4,14 @@
         .w-col.w-col-9.w-clearfix
           = simple_form_for @parent do |f|
             #error_explanation = f.error_notification
-            .fields
+            .s-fields
+              label.s-label = t("form.role")
+              select.select.s-field#sign_up_pages
+                option data-edit-url="/players/sign_up" = t("static.player")
+                option data-edit-url="/couches/sign_up" = t("static.couch")
+                option data-edit-url="/parents/sign_up" selected="" = t("static.parent")
               = render 'shared/registration_form', :f => f
-            .actions
-              = f.button :submit, :class => "btn"
+              .actions
+                = f.button :submit, t("form.sign_up"), :class => "form-btn", :id => "sign_in"
 
 = render "shared/about"
