@@ -2,6 +2,8 @@
 
 The system walks each athlete through a series of drills and exercises designed to enhance their technical ability and in turn improve their performance on the field. Each athlete is provided with a customized developmental program that is geared towards their unique needs. One of the many unique features of the system is its built-in motivational reward system that entices each player to continue practicing and striving towards the next reward level.
 
+Heroku project: http://sportive-diary.herokuapp.com/
+
 The system is comprised of two main components. A coach’s module where coaches can...
 
 * Define customized developmental plans geared towards the needs of the athlete or team as a whole
