@@ -6,4 +6,5 @@ class Player < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :team_id
 
   belongs_to :team
+  belongs_to :coach
 end

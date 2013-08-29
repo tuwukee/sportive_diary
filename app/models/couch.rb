@@ -6,4 +6,5 @@ class Couch < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
 
   has_many :teams
+  has_many :players
 end
