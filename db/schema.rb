@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130826095619) do
+ActiveRecord::Schema.define(:version => 20130829141726) do
 
   create_table "couches", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -44,9 +44,18 @@ ActiveRecord::Schema.define(:version => 20130826095619) do
     t.datetime "reset_password_sent_at"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "team_id"
   end
 
   add_index "players", ["email"], :name => "index_players_on_email", :unique => true
   add_index "players", ["reset_password_token"], :name => "index_players_on_reset_password_token", :unique => true
+
+  create_table "teams", :force => true do |t|
+    t.string   "name",        :default => "", :null => false
+    t.text     "description", :default => ""
+    t.integer  "coach_id",                    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
 
 end

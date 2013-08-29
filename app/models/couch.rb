@@ -4,4 +4,6 @@ class Couch < ActiveRecord::Base
          :recoverable, :validatable
 
   attr_accessible :email, :password, :password_confirmation
+
+  has_many :teams
 end
