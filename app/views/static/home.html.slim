@@ -9,11 +9,11 @@
               .snippet-text = t("static.sign_up_text")
               ul.button-columns
                 li.button-column
-                  a.button href="#" = t("static.player")
+                  a.button href="/players/sign_up" = t("static.player")
                 li.button-column
-                  a.button href="#" = t("static.couch")
+                  a.button href="/couches/sign_up" = t("static.couch")
                 li.button-column
-                  a.button href="#" = t("static.parent")
+                  a.button href="/parents/sign_up" = t("static.parent")
         .w-col.w-col-6
           .w-clearfix.w-inline-block.snippet
             .snippet-text-section
@@ -28,9 +28,4 @@
                   = password_field_tag 'password', '', :class => "s-field"
                   = submit_tag "Sign In", :class => "button form-btn", :id => "sign_in"
 
-.section.grey
-  .w-container
-
-      h4 = t("static.about")
-      p = t("static.about_text")
-
+= render "shared/about"

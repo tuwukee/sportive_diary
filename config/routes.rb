@@ -1,7 +1,7 @@
 SportiveDiary::Application.routes.draw do
 
   devise_for :parents, :class_name => 'Parent', :controllers => { :registrations => "parents/registrations", :sessions => "sessions" } do
-    get   "parents/sign_up" => "players/registrations#new", :as => :parents_signup
+    get   "parents/sign_up" => "parents/registrations#new", :as => :parents_signup
     delete "sessions/destroy" => "sessions#destroy", :as => :sign_out
   end
 

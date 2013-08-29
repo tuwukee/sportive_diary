@@ -1,6 +1,12 @@
-= simple_nested_form_for @parent do |f|
-  #error_explanation = f.error_notification
-  .fields
-    = render 'shared/registration_form', :f => f
-  .actions
-    = f.button :submit, :class => "btn"
+.section
+  .w-container
+    .w-row.snippet-row
+        .w-col.w-col-9.w-clearfix
+          = simple_form_for @parent do |f|
+            #error_explanation = f.error_notification
+            .fields
+              = render 'shared/registration_form', :f => f
+            .actions
+              = f.button :submit, :class => "btn"
+
+= render "shared/about"
