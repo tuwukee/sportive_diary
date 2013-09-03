@@ -11,6 +11,7 @@
                 option data-edit-url="/couches/sign_up" = t("static.couch")
                 option data-edit-url="/parents/sign_up" = t("static.parent")
               = render 'shared/registration_form', :f => f
+              = f.input :couch_code, label_html: { class: 's-label' }, input_html: { class: 's-field', required: true }
               .actions
                 = f.button :submit, t("form.sign_up"), :class => "form-btn", :id => "sign_in"
 

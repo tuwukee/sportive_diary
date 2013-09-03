@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130829142633) do
+ActiveRecord::Schema.define(:version => 20130903140249) do
 
   create_table "couches", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130829142633) do
     t.datetime "reset_password_sent_at"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "code"
   end
 
   add_index "couches", ["email"], :name => "index_couches_on_email", :unique => true

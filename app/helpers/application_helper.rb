@@ -1,5 +1,7 @@
 module ApplicationHelper
   def current_user
-    session["class_name"] ? session["class_name"].constantize.find(session["warden.user.player.key"][0]) : false
+    warden_info = nil
+    session.select { |key, value| warden_info = value if key.to_s.match(/.*\.key/) }
+    session["class_name"] ? session["class_name"].constantize.find(warden_info[0]) : false
   end
 end
