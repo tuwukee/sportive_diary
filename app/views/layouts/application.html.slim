@@ -7,5 +7,7 @@ html
     = csrf_meta_tags
   body
     = render "layouts/header"
+    .flash_messages
+      = render :partial => "shared/flash_messages", :flash => flash
     = yield
     = render "layouts/footer"
