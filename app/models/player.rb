@@ -5,7 +5,7 @@ class Player < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation, :team_id
+  attr_accessible :email, :password, :password_confirmation, :team_id, :couch_id
   attr_accessor :couch_code
 
   belongs_to :team

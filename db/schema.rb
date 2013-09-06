@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20130903140249) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.integer  "team_id"
-    t.integer  "coach_id"
+    t.integer  "couch_id"
   end
 
   add_index "players", ["email"], :name => "index_players_on_email", :unique => true
