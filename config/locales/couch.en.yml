@@ -1,0 +1,6 @@
+en:
+  couch:
+      subheader:
+      dashboard: "Dashboard"
+      manage_teams: "Manage Teams"
+      profile: "Profile"

@@ -28,4 +28,7 @@
                   = password_field_tag 'password', '', :class => "s-field"
                   = submit_tag "Sign In", :class => "button form-btn", :id => "sign_in"
 
-= render "shared/about"
+  = render "shared/about"
+- else
+  - if current_user.couch?
+    = render  :template => "couches/index"

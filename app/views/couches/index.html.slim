@@ -1,0 +1,114 @@
+= render "shared/subheader"
+= render "couches/couch_subheader"
+.s-container.snippet.couch
+  .w-row
+    .w-col.w-col-6.w-clearfix
+      .w-clearfix
+        .team_name Garden City Panthers
+        table.one-column-emphasis
+          thead
+            tr
+              th.name scope="col" Player Name
+              th.data scope="col" Last Login
+              th.data scope="col" Last Completed
+              th.data scope="col" 5 Days inactive
+          tbody
+            tr
+              td.name Connie Glover
+              td.data Mon, 26 Aug 2013
+              td.data Fri, 6 Sep 2013
+              td.check
+                = fa_icon "remove"
+            tr
+              td.name Adrian Gilbert
+              td.data Tue, 5 sep 2013
+              td.data Fri, 6 Sep 2013
+              td.check
+            tr
+              td.name Christoper Drayton
+              td.data Mon, 26 Aug 2013
+              td.data Tue, 5 sep 2013
+              td.check
+                = fa_icon "remove"
+            tr
+              td.name Winfred Toledo
+              td.data Fri, 6 Sep 2013
+              td.data Fri, 6 Sep 2013
+              td.check
+            tr
+              td.name Cherri Vanhoose
+              td.data Mon, 26 Aug 2013
+              td.data Fri, 6 Sep 2013
+              td.check
+            tr
+              td.name Adelaide Castleberry
+              td.data Tue, 5 sep 2013
+              td.data Fri, 6 Sep 2013
+              td.check
+                = fa_icon "remove"
+            tr
+              td.name Porter Lachance
+              td.data Mon, 26 Aug 2013
+              td.data Tue, 5 sep 2013
+              td.check
+                = fa_icon "remove"
+            tr
+              td.name Ramon Hampton
+              td.data Fri, 6 Sep 2013
+              td.data Fri, 6 Sep 2013
+              td.check
+
+        a.button.manage_team href="#" = "Manage Team"
+
+
+    .w-col.w-col-6
+      .w-clearfix
+        .team_activity Team Activity - Today
+        table.one-column-emphasis
+          tbody
+            tr
+              td.activity Players Logged In
+              td 1
+            tr
+              td.activity Activities Completed
+              td 1
+            tr
+              td.activity Assessments Taken
+              td 0
+
+        .team_activity Player Profile
+        .w-row
+          .w-col.w-col-8.w-clearfix
+            .player_name Adrian Gilbert
+            .w-row
+              .w-col.w-col-6.w-clearfix
+                table.one-column-emphasis.prof_tab
+                  tbody
+                    tr
+                      td.activity Last Log In
+                      td Fri, 6 Sep 2013
+                    tr
+                      td.activity Last Activity
+                      td Tue, 5 sep 2013
+                    tr
+                      td.activity Position
+                      td Midfield
+              .w-col.w-col-6.w-clearfix
+                table.one-column-emphasis.prof_tab2
+                  tbody
+                    tr
+                      td.activity Days Inactive
+                      td 1
+                    tr
+                      td.activity Player points
+                      td 385
+
+          .w-col.w-col-3.w-clearfix
+            .profile_pic
+              = image_tag("profile.png", { :alt => 'Adrian Gilbert' })
+
+        .w-row
+          .w-col.w-col-6.w-clearfix
+            a.button.prof_btn#left_btn href="#" = "Motivate"
+          .w-col.w-col-6.w-clearfix.t_center
+            a.button.prof_btn#right_btn href="#" = "Send Message"

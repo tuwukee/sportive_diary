@@ -1,0 +1,10 @@
+.subheader
+  .s-container
+    .section.header
+      .w-row
+        - if current_user.couch?
+          .w-col.w-col-8.nav-bar
+            a.nav-link href="#" target="_self" = t("subheader.corner")
+            a.nav-link href="#" target="_self" = t("subheader.plan")
+            a.nav-link href="#" target="_self" = t("subheader.skills")
+            a.nav-link href="#" target="_self" = t("subheader.videos")

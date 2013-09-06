@@ -1,0 +1,9 @@
+.couch_subheader
+  .s-container
+    .section.header
+      .w-row
+        - if current_user.couch?
+          .w-col.w-col-8.nav-bar
+            a.nav-link href="#" target="_self" = t("couch.subheader.dashboard")
+            a.nav-link href="#" target="_self" = t("couch.subheader.manage_teams")
+            a.nav-link href="#" target="_self" = t("couch.subheader.profile")

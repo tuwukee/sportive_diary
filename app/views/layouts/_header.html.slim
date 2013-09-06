@@ -1,18 +1,18 @@
 .section.header
-  .w-container
-    .w-row
-      .w-col.w-col-4.company-column
-        .company-title = t("application.title")
-      .w-col.w-col-8.nav-bar
-        a.nav-link href="#" target="_self" = t("application.header.sign_up")
-        a.nav-link href="#" target="_self" = t("application.header.company")
-        a.nav-link href="#" target="_self" = t("application.header.blog")
-        - if current_user
-          = link_to t("application.header.sign_out"), sign_out_path, :class => "nav-link sign-up", :method => :delete
-        - else
-          a.nav-link.sign-up href="/" target="_self" = t("application.header.sign_in")
+  - if current_user
+    .s-container
+      = render "layouts/common_header"
+  - else
+    .w-container
+      = render "layouts/common_header"
+
 div
   .hero-bg
-    .w-container
-      h1#page-nav-Section-1 = t("static.title")
-      .subtitle = t("static.subtitle")
+    - if current_user
+      .s-container
+        h1#page-nav-Section-1 = t("static.title")
+        .subtitle = t("static.subtitle")
+    - else
+      .w-container
+        h1#page-nav-Section-1 = t("static.title")
+        .subtitle = t("static.subtitle")

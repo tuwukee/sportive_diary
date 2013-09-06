@@ -2,4 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  subheader:
+    corner: "Couch's Corner"
+    plan: "Development Plan"
+    skills: "Skills"
+    videos: "Videos"

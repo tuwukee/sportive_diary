@@ -15,3 +15,4 @@ gem 'jquery-rails'
 gem 'slim'
 gem 'devise'
 gem 'simple_form'
+gem "font-awesome-rails"
