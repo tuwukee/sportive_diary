@@ -1,0 +1,98 @@
+= render "shared/subheader"
+= render "players/player_subheader"
+.s-container.snippet.player
+  .w-row
+    .w-col.w-col-6.w-clearfix
+      .w-clearfix
+        .dev_plan Development Plan - Quick Access
+        .w-row.unmargin
+          .w-col.w-col-6.w-clearfix
+            .dev_name Just The Basics
+          .w-col.w-col-6.w-clearfix
+            a.button.start_workout href="#"
+              = "Start Next Workout "
+              = fa_icon "double-angle-right"
+        table.one-column-emphasis
+          thead
+            tr
+              th scope="col" Session 1
+              th scope="col" Completed
+          tbody
+            tr
+              td Day 1
+              td.check
+                = fa_icon "check"
+            tr
+              td Day 2
+              td.check
+                = fa_icon "check-empty"
+            tr
+              td Day 3
+              td.check
+                = fa_icon "check"
+            tr
+              td Day 4
+              td.check
+                = fa_icon "check-empty"
+            tr
+              td Day 5
+              td.check
+                = fa_icon "check-empty"
+            tr
+              td Day 6
+              td.check
+                = fa_icon "check"
+            tr
+              td Day 7
+              td.check
+                = fa_icon "check-empty"
+            tr
+              td Day 8
+              td.check
+                = fa_icon "check"
+
+    .w-col.w-col-6
+      .w-clearfix
+        .dev_plan Progress Rewards
+        .w-row
+          .w-col.w-col-6.w-clearfix
+            table.one-column-emphasis.prof_tab
+              tbody
+                tr
+                  td.activity Current points
+                  td 130
+                tr
+                  td.activity Points To Next Reward
+                  td 30
+          .w-col.w-col-6.w-clearfix
+            table.one-column-emphasis.prof_tab2
+              tbody
+                tr
+                  td.activity Next Milestone
+                  td 160
+        .w-row
+          .w-col.w-col-6.w-clearfix
+            table.one-column-emphasis.prof_tab
+              tbody
+                tr
+                  td.activity Last Reward
+                  td 130
+
+          .w-col.w-col-6.w-clearfix
+            table.one-column-emphasis.prof_tab2
+              tbody
+                tr
+                  td.activity Next Reward
+                  td 160
+        .w-row
+          .w-col.w-col-6.w-clearfix
+            table.one-column-emphasis.prof_tab
+              tbody
+                tr
+                  td.activity 5% Off Gear Purchase
+
+          .w-col.w-col-6.w-clearfix
+            table.one-column-emphasis.prof_tab2
+              tbody
+                tr
+                  td.activity 5$ Discaunt at Dicks Sporting Goods

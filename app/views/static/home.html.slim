@@ -32,3 +32,6 @@
 - else
   - if current_user.couch?
     = render  :template => "couches/index"
+  - elsif current_user.player?
+    = render  :template => "players/index"
+
