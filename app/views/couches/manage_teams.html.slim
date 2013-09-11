@@ -1,0 +1,33 @@
+= render "shared/subheader"
+= render "couches/couch_subheader"
+.s-container.snippet.couch
+  .w-row
+    .w-col.w-col-6
+      .w-clearfix
+        .team_activity Search Players
+        = form_tag '#', :method => :get do
+          .w-row
+            .w-col.w-col-6
+              .mt-fields
+                = label_tag 'player_id', "Player ID", :class => "mt-label"
+                = text_field_tag 'player_id', '', :class => "mt-field"
+                br
+                = label_tag 'last_name', "Last Name", :class => "mt-label"
+                = text_field_tag 'last_name', '', :class => "mt-field"
+            .w-col.w-col-6
+              .mt-fields
+                = submit_tag "Search", :class => "button mt-search"
+                .w-block.sep
+                = label_tag 'city', "City", :class => "mt-label "
+                = text_field_tag 'city', '', :class => "mt-field"
+
+
+        .w-row
+          .w-col.w-col-6.w-clearfix
+            a.button.prof_btn#left_btn href="#" = "Motivate"
+          .w-col.w-col-6.w-clearfix.t_center
+            a.button.prof_btn#right_btn href="#" = "Send Message"
+
+    .w-col.w-col-6.w-clearfix
+      .w-clearfix
+        .team_activity Team Management

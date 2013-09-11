@@ -19,5 +19,6 @@ SportiveDiary::Application.routes.draw do
   resources :couches
   resources :parents
 
+  get "/manage_teams", :to => "couches#manage_teams"
   root :to => 'static#home'
 end
