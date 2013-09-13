@@ -16,17 +16,23 @@
                 = text_field_tag 'last_name', '', :class => "mt-field"
             .w-col.w-col-6
               .mt-fields
-                = submit_tag "Search", :class => "button mt-search"
-                .w-block.sep
                 = label_tag 'city', "City", :class => "mt-label "
                 = text_field_tag 'city', '', :class => "mt-field"
+                .w-block
+                = submit_tag "Search", :class => "button mt-search"
 
+        .players
+          .team_activity Players
+          .w-row.inv_player
+            .w-col.w-col-6
+              | Click here to invite player
+            .w-col.w-col-6
+              = link_to "Add player", nil, :class => 'button'
 
-        .w-row
-          .w-col.w-col-6.w-clearfix
-            a.button.prof_btn#left_btn href="#" = "Motivate"
-          .w-col.w-col-6.w-clearfix.t_center
-            a.button.prof_btn#right_btn href="#" = "Send Message"
+          .brd.players-table
+            table.table
+              = render :partial => 'couches/player', :collection => @players, :as => :player
+
 
     .w-col.w-col-6.w-clearfix
       .w-clearfix

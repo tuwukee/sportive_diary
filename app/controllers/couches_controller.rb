@@ -5,6 +5,7 @@ class CouchesController < ApplicationController
   end
 
   def manage_teams
+    @players = current_user.players
   end
 
   private
