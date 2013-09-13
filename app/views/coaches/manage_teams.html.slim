@@ -23,15 +23,14 @@
 
         .players
           .team_activity Players
-          .w-row.inv_player
+          .w-row.mt-fields
             .w-col.w-col-6
-              | Click here to invite player
+              .one-column-emphasis style="color:#404040;" Click here to invite player not currently in Sportive Diary
             .w-col.w-col-6
-              = link_to "Add player", nil, :class => 'button'
+              = link_to "Add player", nil, :class => 'button mt-invite'
 
-          .brd.players-table
-            table.table
-              = render :partial => 'coaches/player', :collection => @players, :as => :player
+          ul.list
+            = render :partial => 'coaches/player', :collection => @players, :as => :player
 
 
     .w-col.w-col-6.w-clearfix
