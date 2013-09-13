@@ -4,7 +4,7 @@ Warden::Strategies.add(:multi_strategy) do
   end
 
   def authenticate!
-    user = Couch.authenticate(params['email'], params['password'])
+    user = Coach.authenticate(params['email'], params['password'])
     user ||= Player.authenticate(params['email'], params['password'])
     user ||= Parent.authenticate(params['email'], params['password'])
 

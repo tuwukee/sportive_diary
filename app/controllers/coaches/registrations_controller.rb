@@ -1,4 +1,4 @@
-class Couches::RegistrationsController < Devise::RegistrationsController
+class Coaches::RegistrationsController < Devise::RegistrationsController
   after_filter :welcome, :only => [:create]
 
   def create
@@ -18,6 +18,6 @@ class Couches::RegistrationsController < Devise::RegistrationsController
   end
 
   def welcome
-    CouchMailer.welcome(resource).deliver unless resource.invalid?
+    CoachMailer.welcome(resource).deliver unless resource.invalid?
   end
 end

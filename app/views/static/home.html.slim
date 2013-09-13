@@ -11,7 +11,7 @@
                 li.button-column
                   a.button href="/players/sign_up" = t("static.player")
                 li.button-column
-                  a.button href="/couches/sign_up" = t("static.couch")
+                  a.button href="/coaches/sign_up" = t("static.coach")
                 li.button-column
                   a.button href="/parents/sign_up" = t("static.parent")
         .w-col.w-col-6
@@ -30,8 +30,8 @@
 
   = render "shared/about"
 - else
-  - if current_user.couch?
-    = render  :template => "couches/index"
+  - if current_user.coach?
+    = render  :template => "coaches/index"
   - elsif current_user.player?
     = render  :template => "players/index"
 

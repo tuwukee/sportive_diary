@@ -1,6 +1,6 @@
-class DeviseCreateCouches < ActiveRecord::Migration
+class DeviseCreateCoaches < ActiveRecord::Migration
   def change
-    create_table(:couches) do |t|
+    create_table(:coaches) do |t|
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
@@ -12,7 +12,7 @@ class DeviseCreateCouches < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :couches, :email,                :unique => true
-    add_index :couches, :reset_password_token, :unique => true
+    add_index :coaches, :email,                :unique => true
+    add_index :coaches, :reset_password_token, :unique => true
   end
 end

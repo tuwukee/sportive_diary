@@ -3,8 +3,8 @@ module SelfIdentification
     self.class.name == "Player"
   end
 
-  def couch?
-    self.class.name == "Couch"
+  def coach?
+    self.class.name == "Coach"
   end
 
   def parent?

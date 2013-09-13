@@ -5,7 +5,7 @@ en:
     sign_up: "New user Sign Up"
     sign_up_text: "Please, select your role."
     player: "Player"
-    couch: "Couch"
+    coach: "Coach"
     parent: "Parent"
     sign_in: "Sign In"
     sign_in_text: "Enter yor creditions."

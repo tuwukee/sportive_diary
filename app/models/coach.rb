@@ -1,4 +1,4 @@
-class Couch < ActiveRecord::Base
+class Coach < ActiveRecord::Base
   extend Authentication
   include SelfIdentification
 

@@ -1,6 +1,6 @@
 = render "shared/subheader"
-= render "couches/couch_subheader"
-.s-container.snippet.couch
+= render "coaches/coach_subheader"
+.s-container.snippet.coach
   .w-row
     .w-col.w-col-6
       .w-clearfix
@@ -31,7 +31,7 @@
 
           .brd.players-table
             table.table
-              = render :partial => 'couches/player', :collection => @players, :as => :player
+              = render :partial => 'coaches/player', :collection => @players, :as => :player
 
 
     .w-col.w-col-6.w-clearfix

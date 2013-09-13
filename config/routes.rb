@@ -4,8 +4,8 @@ SportiveDiary::Application.routes.draw do
     delete "sessions/destroy" => "sessions#destroy", :as => :sign_out
   end
 
-  devise_for :couches, :class_name => 'Couch', :controllers => { :registrations => "couches/registrations", :sessions => "sessions" } do
-    get   "couches/sign_up" => "couches/registrations#new", :as => :couches_signup
+  devise_for :coaches, :class_name => 'Coach', :controllers => { :registrations => "coaches/registrations", :sessions => "sessions" } do
+    get   "coaches/sign_up" => "coaches/registrations#new", :as => :coaches_signup
     delete "sessions/destroy" => "sessions#destroy", :as => :sign_out
   end
 
@@ -16,9 +16,9 @@ SportiveDiary::Application.routes.draw do
   end
 
   resources :players
-  resources :couches
+  resources :coaches
   resources :parents
 
-  get "/manage_teams", :to => "couches#manage_teams"
+  get "/manage_teams", :to => "coaches#manage_teams"
   root :to => 'static#home'
 end
