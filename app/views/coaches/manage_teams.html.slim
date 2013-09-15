@@ -28,10 +28,10 @@
               .one-column-emphasis style="color:#404040;" Click here to invite player not currently in Sportive Diary
             .w-col.w-col-6
               = link_to "Add player", nil, :class => 'button mt-invite'
-
-          ul.list
-            = render :partial => 'coaches/player', :collection => @players, :as => :player
-
+          .sep-block
+            ul.list
+              #scroll-players
+                = render :partial => 'coaches/player', :collection => @players, :as => :player
 
     .w-col.w-col-6.w-clearfix
       .w-clearfix

@@ -16,3 +16,5 @@ gem 'slim'
 gem 'devise'
 gem 'simple_form'
 gem "font-awesome-rails"
+gem "jquery-ui-rails"
+
