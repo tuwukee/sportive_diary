@@ -333,5 +333,5 @@ $(document).ready ->
     $scroll.slimscroll({ height: '240px' })
 
   $scroll = $('#scroll-players-index')
-  if $scroll.height() > 340
-    $scroll.slimscroll({ height: '340px' })
+  if $scroll.height() > 387
+    $scroll.slimscroll({ height: '387px' })

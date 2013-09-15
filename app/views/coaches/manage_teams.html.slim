@@ -36,3 +36,21 @@
     .w-col.w-col-6.w-clearfix
       .w-clearfix
         .team_activity Team Management
+        table.one-column-emphasis
+          tbody
+            tr
+              td.activ Team ID
+              td 1
+            tr
+              td.activ Program Code
+              td 1
+            tr
+              td.activ Team Name
+              td 0
+            tr
+              td.activ Team Description
+              td Tiny Scrollbar can be used for scrolling content. It was built using the javascript jQuery library. Tiny scrollbar was designed to be a dynamic lightweight utility that gives webdesigners a powerfull way of enhancing a websites user interface.
+        .sep-block
+          ul.team-list#sortable
+            #scroll-teams
+              = render :partial => 'coaches/team', :collection => @teams, :as => :team

@@ -12,9 +12,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "jquery-ui-rails"
 gem 'slim'
-gem 'devise'
+gem 'devise', '~>  2.2.4'
 gem 'simple_form'
 gem "font-awesome-rails"
-gem "jquery-ui-rails"
+
 

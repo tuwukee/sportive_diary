@@ -12,44 +12,47 @@
             a.button.start_workout href="#"
               = "Start Next Workout "
               = fa_icon "double-angle-right"
-        table.one-column-emphasis
+        table.one-column-emphasis style="margin-bottom: 0px"
           thead
             tr
               th scope="col" Session 1
-              th scope="col" Completed
-          tbody
-            tr
-              td Day 1
-              td.check
-                = fa_icon "check"
-            tr
-              td Day 2
-              td.check
-                = fa_icon "check-empty"
-            tr
-              td Day 3
-              td.check
-                = fa_icon "check"
-            tr
-              td Day 4
-              td.check
-                = fa_icon "check-empty"
-            tr
-              td Day 5
-              td.check
-                = fa_icon "check-empty"
-            tr
-              td Day 6
-              td.check
-                = fa_icon "check"
-            tr
-              td Day 7
-              td.check
-                = fa_icon "check-empty"
-            tr
-              td Day 8
-              td.check
-                = fa_icon "check"
+              th.check scope="col" Completed
+        #scroll-players
+          table.one-column-emphasis.unmargin
+            tbody
+                tr
+                  td Day 1
+                  td.check
+                    = fa_icon "check"
+                tr
+                  td Day 2
+                  td.check
+                    = fa_icon "check-empty"
+                tr
+                  td Day 3
+                  td.check
+                    = fa_icon "check"
+                tr
+                  td Day 4
+                  td.check
+                    = fa_icon "check-empty"
+                tr
+                  td Day 5
+                  td.check
+                    = fa_icon "check-empty"
+                tr
+                  td Day 6
+                  td.check
+                    = fa_icon "check"
+                tr
+                  td Day 7
+                  td.check
+                    = fa_icon "check-empty"
+                tr
+                  td Day 8
+                  td.check
+                    = fa_icon "check"
+        .w-block style="height: 20px"
 
     .w-col.w-col-6
       .w-clearfix

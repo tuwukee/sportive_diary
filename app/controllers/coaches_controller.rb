@@ -6,6 +6,7 @@ class CoachesController < ApplicationController
 
   def manage_teams
     @players = current_user.players
+    @teams = current_user.teams
   end
 
   private
