@@ -223,7 +223,7 @@ $(document).ready ->
         o.height = (if (o.height is "auto") then me.parent().height() else o.height)
         wrapper = $(divS).addClass(o.wrapperClass).css(
           position: "relative"
-          overflow: "hidden"
+          #overflow: "hidden"
           width: o.width
           height: o.height
         )
@@ -328,10 +328,11 @@ $(document).ready ->
     jQuery.fn.extend slimscroll: jQuery.fn.slimScroll
   ) jQuery
 
+
   $scroll = $('#scroll-players')
   if $scroll.height() > 240
     $scroll.slimscroll({ height: '240px' })
 
   $scroll = $('#scroll-players-index')
   if $scroll.height() > 387
-    $scroll.slimscroll({ height: '387px' })
+    $scroll.slimscroll({ height: '387px'})

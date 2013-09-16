@@ -30,7 +30,7 @@
               = link_to "Add player", nil, :class => 'button mt-invite'
           .sep-block
             ul.list
-              #scroll-players
+              #scroll-players.sortable
                 = render :partial => 'coaches/player', :collection => @players, :as => :player
 
     .w-col.w-col-6.w-clearfix
@@ -51,6 +51,6 @@
               td.activ Team Description
               td Tiny Scrollbar can be used for scrolling content. It was built using the javascript jQuery library. Tiny scrollbar was designed to be a dynamic lightweight utility that gives webdesigners a powerfull way of enhancing a websites user interface.
         .sep-block
-          ul.team-list#sortable
-            #scroll-teams
+          ul.team-list
+            #scroll-teams.sortable
               = render :partial => 'coaches/team', :collection => @teams, :as => :team
