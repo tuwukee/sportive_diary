@@ -1,3 +1,5 @@
 li
-  span
-    = team.name
+  span style="font-size: 14px;"
+     = team.name
+  ul.sortable-players data-team-id="#{team.id}"
+    = render :partial => 'coaches/player', :collection => team.players, :as => :player

@@ -61,7 +61,6 @@
     border-radius: 5px
     border: 1px solid #dadada
 
-
   .mt-field:focus
     outline: none
     border-color: #7CB4DF
@@ -94,7 +93,6 @@ span.country
   float: right
 
 ul.list
-
   list-style-type: none
   display: block
   margin-left: 55px
@@ -118,9 +116,12 @@ ul.list
     background-color: #EFF2FF
     border-color: #EFF2FF
 
+.ui-draggable-helper
+  background-color: #EFF2FF
+  z-index: 100
+  width: 560px
 
 ul.team-list
-
   list-style-type: none
   display: block
   margin-left: 55px
@@ -143,3 +144,26 @@ ul.team-list
   li:hover
     background-color: #D2E1F4
     border-color: #D2E1F4
+
+    ul.sortable-players
+      li
+        background-color: #EFF2FF
+        border-color: #EFF2FF
+
+ul.sortable-players
+  min-height: 10px
+  width: 90%
+  margin-top: 10px
+  list-style: none
+  right: 5px
+  li
+    padding: 3px 6%
+    background-color: #DCDCDC
+    background-size: 50% 50px
+    border-bottom: 2px solid #DCDCDC
+    border-right: 2px solid #DCDCDC
+    border-left: 2px solid #DCDCDC
+    border-top: 2px solid #DCDCDC
+    box-sizing: border-box
+    border-radius: 3px
+    margin-bottom: 5px

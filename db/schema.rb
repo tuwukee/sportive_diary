@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130903140249) do
+ActiveRecord::Schema.define(:version => 20130917160431) do
 
   create_table "coaches", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -45,12 +45,19 @@ ActiveRecord::Schema.define(:version => 20130903140249) do
     t.datetime "reset_password_sent_at"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.integer  "team_id"
     t.integer  "coach_id"
   end
 
   add_index "players", ["email"], :name => "index_players_on_email", :unique => true
   add_index "players", ["reset_password_token"], :name => "index_players_on_reset_password_token", :unique => true
+
+  create_table "players_teams", :id => false, :force => true do |t|
+    t.integer "player_id", :null => false
+    t.integer "team_id",   :null => false
+  end
+
+  add_index "players_teams", ["player_id", "team_id"], :name => "index_players_teams_on_player_id_and_team_id", :unique => true
+  add_index "players_teams", ["player_id"], :name => "index_players_teams_on_player_id"
 
   create_table "teams", :force => true do |t|
     t.string   "name",        :default => "", :null => false

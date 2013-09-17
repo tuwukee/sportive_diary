@@ -18,6 +18,7 @@ SportiveDiary::Application.routes.draw do
   resources :players
   resources :coaches
   resources :parents
+  resources :teams, :only => [:update]
 
   get "/manage_teams", :to => "coaches#manage_teams"
   root :to => 'static#home'

@@ -8,6 +8,6 @@ class Player < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :team_id, :coach_id
   attr_accessor :coach_code
 
-  belongs_to :team
+  has_and_belongs_to_many :team
   belongs_to :coach
 end
