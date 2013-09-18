@@ -11,11 +11,18 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem "shoulda-matchers"
+end
+
 gem 'jquery-rails'
 gem "jquery-ui-rails"
 gem 'slim'
 gem 'devise', '~>  2.2.4'
 gem 'simple_form'
 gem "font-awesome-rails"
-
-
