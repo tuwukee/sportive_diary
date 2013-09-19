@@ -3,8 +3,9 @@ table
   border-collapse: collapse
 
   .name
-    width: 200px
+    width: 120px
     cursor: pointer
+
   .activity, .activ
     width: 80%
     color: #404040 !important
@@ -14,38 +15,67 @@ table
   .data, .check
     width: 110px
   .check
-    text-align: center
+    padding-left: 40px !important
 .coach, .player
   .one-column-emphasis
-    max-width: 700px
+    max-width: 550px
 
 .prof_tab
   margin-left: 75px !important
+
+.prof_tab, .prof_tab2
+  td.data
+    padding-right: 0
+    padding-left: 1px
+  .activity, .data
+    width: 25%
   .activity
-    width: 45%
+    font-size: 13px
+
+.player
+  .prof_tab, .prof_tab2
+    .activity
+      width: 45%
+      font-size: 13px
+
+  table.one-column-emphasis.prof_tab2
+    max-width: 200px
 
 table.one-column-emphasis.prof_tab2
   margin-left: 65px
   margin-right: 35px
-  max-width: 250px
-  .activity
-    width: 70%
+  max-width: 150px
+
+  td.activity
+    padding-left: 5px
+    width: 56%
+
+.limited
+  max-width: 530px !important
+
+table .p-check
+  width: 110px
+  padding-left: 10px !important
 
 .one-column-emphasis
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif
   font-size: 12px
-  margin-right: 45px
-  margin-left: 45px
+  margin-right: 35px
+  margin-left: 35px
   margin-bottom: 20px
   margin-top: 20px
   text-align: left
   border-collapse: collapse
+  table-layout: fixed
+
   th
     font-size: 14px
     font-weight: normal
     padding: 12px 15px
     color: #404040
   td
+    overflow: hidden
+    white-space: break-word
     padding: 10px 15px
     color: #5C5C5C
     border-top: 1px solid #e8edff

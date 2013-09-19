@@ -15,7 +15,7 @@
                 = label_tag 'last_name', "Last Name", :class => "mt-label"
                 = text_field_tag 'last_name', '', :class => "mt-field"
             .w-col.w-col-6
-              .mt-fields
+              .mt-fields.unmargin.right-fields
                 = label_tag 'city', "City", :class => "mt-label "
                 = text_field_tag 'city', '', :class => "mt-field"
                 .w-block
@@ -36,7 +36,7 @@
     .w-col.w-col-6.w-clearfix
       .w-clearfix
         .team_activity Team Management
-        table.one-column-emphasis
+        table.one-column-emphasis.limited
           tbody
             tr
               td.activ Team ID
@@ -54,3 +54,5 @@
           ul.team-list
             #scroll-teams.sortable-teams
               = render :partial => 'coaches/team', :collection => @teams, :as => :team
+          .mt-fields
+            = link_to "Add Team", nil, :class => 'button mt-add-team'
