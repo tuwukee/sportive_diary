@@ -32,3 +32,4 @@ gem 'slim'
 gem 'devise', '~>  2.2.4'
 gem 'simple_form'
 gem "font-awesome-rails"
+gem 'simple_enum'
