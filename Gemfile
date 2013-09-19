@@ -22,6 +22,7 @@ end
 
 gem 'jquery-rails'
 gem "jquery-ui-rails"
+gem 'angularjs-rails'
 gem 'slim'
 gem 'devise', '~>  2.2.4'
 gem 'simple_form'

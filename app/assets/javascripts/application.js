@@ -15,4 +15,5 @@
 //= require jquery.ui.draggable
 //= require jquery.ui.droppable
 //= require jquery.ui.sortable
+//= require angular
 //= require_tree .
