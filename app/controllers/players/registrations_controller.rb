@@ -1,7 +1,15 @@
 class Players::RegistrationsController < Devise::RegistrationsController
   before_filter :find_coach, :only => [:create]
+
+   def new
+    build_resource({})
+    self.resource.build_profile
+    respond_with self.resource
+  end
+
   def create
     super
+
     session[:class_name] = resource.class.name unless resource.invalid?
   end
 

@@ -1,6 +1,12 @@
 class Coaches::RegistrationsController < Devise::RegistrationsController
   after_filter :welcome, :only => [:create]
 
+  def new
+    build_resource({})
+    self.resource.build_profile
+    respond_with self.resource
+  end
+
   def create
     super
 

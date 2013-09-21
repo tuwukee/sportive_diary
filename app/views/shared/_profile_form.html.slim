@@ -1,0 +1,4 @@
+= f.fields_for :profile do |profile_form|
+  = profile_form.input :first_name, label_html: { class: 's-label' }, input_html: { class: 's-field' }, :required => true
+  = profile_form.input :last_name, label_html: { class: 's-label' }, input_html: { class: 's-field' }, :required => true
+  = profile_form.input :gender, :as => :radio_buttons, :collection => Profile.genders.keys, label_html: { class: 's-label' }, :item_wrapper_class => 'inline', :checked => Profile.genders.first
