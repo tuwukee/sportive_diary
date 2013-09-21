@@ -3,7 +3,7 @@ class Player < ActiveRecord::Base
   include SelfIdentification
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :validatable
+         :recoverable, :validatable, :trackable
 
   attr_accessible :email,
                   :password,
