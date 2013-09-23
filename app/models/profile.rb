@@ -6,7 +6,10 @@ class Profile < ActiveRecord::Base
                   :last_name,
                   :birthday,
                   :coach_id,
-                  :player_id
+                  :player_id,
+                  :gender,
+                  :country,
+                  :city
 
   as_enum :gender, :male => 0, :female => 1
 

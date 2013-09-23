@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130921130748) do
+ActiveRecord::Schema.define(:version => 20130923092013) do
+
+  create_table "city", :id => false, :force => true do |t|
+    t.integer "id",                       :null => false
+    t.text    "name",                     :null => false
+    t.string  "countrycode", :limit => 3, :null => false
+    t.text    "district",                 :null => false
+    t.integer "population",               :null => false
+  end
 
   create_table "coaches", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -25,6 +33,31 @@ ActiveRecord::Schema.define(:version => 20130921130748) do
 
   add_index "coaches", ["email"], :name => "index_coaches_on_email", :unique => true
   add_index "coaches", ["reset_password_token"], :name => "index_coaches_on_reset_password_token", :unique => true
+
+  create_table "country", :id => false, :force => true do |t|
+    t.string  "code",           :limit => 3,                                :null => false
+    t.text    "name",                                                       :null => false
+    t.text    "continent",                                                  :null => false
+    t.text    "region",                                                     :null => false
+    t.float   "surfacearea",                                                :null => false
+    t.integer "indepyear",      :limit => 2
+    t.integer "population",                                                 :null => false
+    t.float   "lifeexpectancy"
+    t.decimal "gnp",                         :precision => 10, :scale => 2
+    t.decimal "gnpold",                      :precision => 10, :scale => 2
+    t.text    "localname",                                                  :null => false
+    t.text    "governmentform",                                             :null => false
+    t.text    "headofstate"
+    t.integer "capital"
+    t.string  "code2",          :limit => 2,                                :null => false
+  end
+
+  create_table "countrylanguage", :id => false, :force => true do |t|
+    t.string  "countrycode", :limit => 3, :null => false
+    t.text    "language",                 :null => false
+    t.boolean "isofficial",               :null => false
+    t.float   "percentage",               :null => false
+  end
 
   create_table "parents", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -73,6 +106,8 @@ ActiveRecord::Schema.define(:version => 20130921130748) do
     t.integer  "gender_cd"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "country"
+    t.string   "city"
   end
 
   create_table "teams", :force => true do |t|

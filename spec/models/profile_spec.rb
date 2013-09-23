@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe Profile do
+
+  it { should belong_to(:player) }
+  it { should belong_to(:coach) }
+  it { should validate_presence_of(:first_name) }
+  it { should validate_presence_of(:last_name) }
+
   it "should be valid" do
     profile = FactoryGirl.build(:profile)
     profile.should be_valid

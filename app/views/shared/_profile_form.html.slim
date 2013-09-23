@@ -1,4 +1,17 @@
-= f.fields_for :profile do |profile_form|
-  = profile_form.input :first_name, label_html: { class: 's-label' }, input_html: { class: 's-field' }, :required => true
-  = profile_form.input :last_name, label_html: { class: 's-label' }, input_html: { class: 's-field' }, :required => true
-  = profile_form.input :gender, :as => :radio_buttons, :collection => Profile.genders.keys, label_html: { class: 's-label' }, :item_wrapper_class => 'inline', :checked => Profile.genders.first
+.div ng-controller="CountrySelectCtrl"
+  = f.fields_for :profile do |profile_form|
+    = profile_form.input :first_name, label_html: { class: 's-label' }, input_html: { class: 's-field' }, :required => true
+    = profile_form.input :last_name, label_html: { class: 's-label' }, input_html: { class: 's-field' }, :required => true
+
+    div
+      label.s-label Country
+      select.s-field.white#country ng-model="country" ng-options="item.country for item in countries"
+        option value=""
+      input type="hidden" name="player[profile_attributes][country]" value="{{ country.country }}"
+    div
+      label.s-label City
+      select.s-field.white#country ng-model="city" ng-disabled="!country" ng-options="item for item in country.cities"
+        option value=""
+      input type="hidden" name="player[profile_attributes][city]" value="{{ city }}"
+
+    = profile_form.input :gender, :as => :radio_buttons, :collection => Profile.genders.keys, label_html: { class: 's-label' }, :item_wrapper_class => 'inline', :checked => Profile.genders.first
