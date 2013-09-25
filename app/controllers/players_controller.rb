@@ -3,7 +3,7 @@ class PlayersController < ApplicationController
 
   def show
   	respond_to do |format|
-      format.json { render :json => { :player => [@player.as_json, @player.profile] } }
+      format.json { render :json => { :player => [@player.as_json.merge({:last_login => @player.last_sign_in_at}), @player.profile] } }
     end
   end
 

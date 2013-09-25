@@ -10,7 +10,7 @@
             tr
               td.activity Last Log In
               td.data ng-show="player"
-                | 6 Sep 2013
+                | {{ player[0]['last_login'] | date:'d MMM yyyy' }}
 
             tr
               td.activity Last Activity
