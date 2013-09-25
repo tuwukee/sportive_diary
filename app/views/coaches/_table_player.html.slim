@@ -1,0 +1,7 @@
+tr
+  td.name ng-click="selectPlayer(#{player.id})" = player.profile.full_name
+  td.data = I18n.l player.last_sign_in_at, :format => :short
+  td.data 6 Sep 2013
+  td.check
+    - if five_days_inactive?(player)
+      = fa_icon "remove"

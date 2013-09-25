@@ -14,67 +14,7 @@
                 th.data scope="col" Last Completed
                 th.data scope="col" 5 Days inactive
             tbody
-              tr
-                td.name Connie Glover
-                td.data 26 Aug 2013
-                td.data 6 Sep 2013
-                td.check
-                  = fa_icon "remove"
-              tr
-                td.name Adrian Gilbert
-                td.data 5 Sep 2013
-                td.data 6 Sep 2013
-                td.check
-              tr
-                td.name Christoper Drayton
-                td.data 26 Aug 2013
-                td.data 5 Sep 2013
-                td.check
-                  = fa_icon "remove"
-              tr
-                td.name Winfred Toledo
-                td.data 6 Sep 2013
-                td.data 6 Sep 2013
-                td.check
-              tr
-                td.name Cherri Vanhoose
-                td.data 26 Aug 2013
-                td.data 6 Sep 2013
-                td.check
-              tr
-                td.name Adelaide Castleberry
-                td.data 5 Sep 2013
-                td.data 6 Sep 2013
-                td.check
-                  = fa_icon "remove"
-              tr
-                td.name Porter Lachance
-                td.data 26 Aug 2013
-                td.data 5 Sep 2013
-                td.check
-                  = fa_icon "remove"
-              tr
-                td.name Ramon Hampton
-                td.data 6 Sep 2013
-                td.data 6 Sep 2013
-                td.check
-              tr
-                td.name Adelaide Castleberry
-                td.data 5 Sep 2013
-                td.data 6 Sep 2013
-                td.check
-                  = fa_icon "remove"
-              tr
-                td.name Porter Lachance
-                td.data 26 Aug 2013
-                td.data 5 Sep 2013
-                td.check
-                  = fa_icon "remove"
-              tr
-                td.name Ramon Hampton
-                td.data 6 Sep 2013
-                td.data 6 Sep 2013
-                td.check
+              = render :partial => 'coaches/table_player', :collection => @players, :as => :player
 
         a.button.manage_team href="#" = "Manage Team"
 
@@ -93,40 +33,4 @@
             tr
               td.activity Assessments Taken
               td 0
-
-        .team_activity Player Profile
-        .w-row
-          .w-col.w-col-8.w-clearfix
-            .player_name Adrian Gilbert
-            .w-row
-              .w-col.w-col-6.w-clearfix
-                table.one-column-emphasis.prof_tab
-                  tbody
-                    tr
-                      td.activity Last Log In
-                      td.data 6 Sep 2013
-                    tr
-                      td.activity Last Activity
-                      td.data 5 Sep 2013
-                    tr
-                      td.activity Position
-                      td.data Midfield
-              .w-col.w-col-6.w-clearfix
-                table.one-column-emphasis.prof_tab2
-                  tbody
-                    tr
-                      td.activity Days Inactive
-                      td.data 1
-                    tr
-                      td.activity Player points
-                      td.data 385
-
-          .w-col.w-col-3.w-clearfix
-            .profile_pic
-              = image_tag("profile.png", { :alt => 'Adrian Gilbert' })
-
-        .w-row
-          .w-col.w-col-6.w-clearfix
-            a.button.prof_btn#left_btn href="#" = "Motivate"
-          .w-col.w-col-6.w-clearfix.t_center
-            a.button.prof_btn#right_btn href="#" = "Send Message"
+        = render :partial => "coaches/player_profile"

@@ -5,7 +5,7 @@ class CoachesController < ApplicationController
   end
 
   def manage_teams
-    @players = current_user.players
+    @players = current_user.players(:joins => :profiles)
     @teams = current_user.teams
   end
 

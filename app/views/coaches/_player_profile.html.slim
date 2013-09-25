@@ -1,0 +1,43 @@
+.team_activity Player Profile
+.w-row
+  .w-col.w-col-8.w-clearfix
+    .player_name
+      | {{ player[1]['first_name'] + ' ' + player[1]['last_name'] }}
+    .w-row
+      .w-col.w-col-6.w-clearfix
+        table.one-column-emphasis.prof_tab
+          tbody
+            tr
+              td.activity Last Log In
+              td.data ng-show="player"
+                | 6 Sep 2013
+
+            tr
+              td.activity Last Activity
+              td.data ng-show="player"
+                | 5 Sep 2013
+            tr
+              td.activity Position
+              td.data ng-show="player"
+                | Midfield
+
+      .w-col.w-col-6.w-clearfix
+        table.one-column-emphasis.prof_tab2
+          tbody
+            tr
+              td.activity Days Inactive
+              td.data ng-show="player"
+                | 1
+            tr
+              td.activity Player points
+              td.data ng-show="player"
+                | 385
+  .w-col.w-col-3.w-clearfix
+    .profile_pic ng-show="player"
+      = image_tag("profile.png", { :alt => 'Adrian Gilbert' })
+
+.w-row
+  .w-col.w-col-6.w-clearfix
+    a.button.prof_btn#left_btn href="#" = "Motivate"
+  .w-col.w-col-6.w-clearfix.t_center
+    a.button.prof_btn#right_btn href="#" = "Send Message"

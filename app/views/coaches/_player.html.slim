@@ -1,5 +1,5 @@
 li.draggable-players data-player-id="#{player.id}"
   span
-    = player.email
+    = player.profile.full_name
   span.country
-    = "Country"
+    = player.profile.city || "City"
