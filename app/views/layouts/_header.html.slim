@@ -1,18 +1,9 @@
 .section.header
-  - if current_user
-    .s-container
-      = render "layouts/common_header"
-  - else
-    .w-container
-      = render "layouts/common_header"
+  .w-container
+    = render "layouts/common_header"
 
 div
   .hero-bg
-    - if current_user
-      .s-container
-        h1#page-nav-Section-1 = t("static.title")
-        .subtitle = t("static.subtitle")
-    - else
-      .w-container
-        h1#page-nav-Section-1 = t("static.title")
-        .subtitle = t("static.subtitle")
+    .w-container
+      h1#page-nav-Section-1 = t("static.title")
+      .subtitle = t("static.subtitle")

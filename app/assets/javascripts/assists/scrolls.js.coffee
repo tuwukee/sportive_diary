@@ -334,8 +334,8 @@ $(document).ready ->
     $scroll.slimscroll({ height: '440px', wheelStep: 3 })
 
   $scroll = $('#scroll-players-index')
-  if $scroll.height() > 406
-    $scroll.slimscroll({ height: '406px'})
+  if $scroll.height() > 469
+    $scroll.slimscroll({ height: '469px', wheelStep: 1 })
 
   $scroll = $('#scroll-teams')
   if $scroll.height() > 440

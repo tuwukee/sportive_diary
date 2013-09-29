@@ -1,6 +1,6 @@
 = render "shared/subheader"
 = render "coaches/coach_subheader"
-.s-container.snippet.coach
+.w-container.snippet.coach ng-controller="ManageTeamsCtrl"
   .w-row
     .w-col.w-col-6
       .w-clearfix
@@ -29,9 +29,16 @@
             .w-col.w-col-6
               = link_to "Add player", nil, :class => 'button mt-invite'
           .sep-block
-            ul.list
-              #scroll-players
-                = render :partial => 'coaches/player', :collection => @players, :as => :player
+            #scroll-players
+              ul.list
+                li.draggable-players dragged-item="" ng-repeat="player in players" data-player-id="{{player.id}}"
+                  span
+                    | {{ player.profile.first_name }}
+                    = " "
+                    | {{ player.profile.last_name }}
+
+                  span.country
+                    | {{ player.profile.city || "City" }}
 
     .w-col.w-col-6.w-clearfix
       .w-clearfix
@@ -52,7 +59,34 @@
               td Tiny Scrollbar can be used for scrolling content. It was built using the javascript jQuery library. Tiny scrollbar was designed to be a dynamic lightweight utility that gives webdesigners a powerfull way of enhancing a websites user interface.
         .sep-block
           ul.team-list
-            #scroll-teams.sortable-teams
-              = render :partial => 'coaches/team', :collection => @teams, :as => :team
+            #scroll-teams
+                label.checkbox
+                input ng-model="oneAtATime" type="checkbox"
+                  | Open only one at a time
+                accordion close-others="oneAtATime"
+                  accordion-group heading="{{ group.name }}" ng-repeat="group in groups"
+                    ul.sortable.sortable-players dropped-item='' data-team-id="{{group.id}}"
+                      li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players"
+                        | {{player.profile.first_name}}
+                        = ' '
+                        | {{player.profile.last_name}}
           .mt-fields
-            = link_to "Add Team", nil, :class => 'button mt-add-team'
+            a.button.mt-add-team ng-click='open()' Add Team
+
+
+  script id="myModalContent.html" type="text/ng-template"
+    .mt-modal
+      .modal-header
+        h4 Create Team
+      .modal-body
+        form.mdl-form
+          .s-fields
+            label.s-label Name
+            input.s-field ng-model="team.name"
+            br
+            label.s-label for='description' Description
+            textarea.s-field#description ng-model="team.description"
+      .modal-footer
+        .s-fields
+          a.button.form-btn ng-click="ok()" Ok
+          a.button.form-btn ng-click="cancel()" Cancel
