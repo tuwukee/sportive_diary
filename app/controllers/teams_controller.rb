@@ -12,7 +12,7 @@ class TeamsController < ApplicationController
   end
 
   def update
-  	if player = Player.find(params[:player_id])
+    if player = Player.find(params[:player_id])
       @team.players << player unless @team.players.include? player
     end
     render :json => @team
