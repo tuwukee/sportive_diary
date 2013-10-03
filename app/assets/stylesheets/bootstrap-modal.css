@@ -68,6 +68,7 @@ a.accordion-toggle, a.accordion-toggle:hover {
 }
 
 .accordion-inner {
+  background-color: #F4F4F4;
   border-top: 1px solid #E5E5E5;
   padding: 9px 15px;
 }

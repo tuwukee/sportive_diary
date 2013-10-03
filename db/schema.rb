@@ -104,10 +104,10 @@ ActiveRecord::Schema.define(:version => 20130923092013) do
     t.string   "last_name"
     t.date     "birthday"
     t.integer  "gender_cd"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "country"
-    t.string   "city"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "country",    :default => "", :null => false
+    t.string   "city",       :default => "", :null => false
   end
 
   create_table "teams", :force => true do |t|

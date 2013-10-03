@@ -5,21 +5,21 @@
     .w-col.w-col-6
       .w-clearfix
         .team_activity Search Players
-        = form_tag '#', :method => :get do
+        = form_tag '#' do
           .w-row
             .w-col.w-col-6
               .mt-fields
                 = label_tag 'player_id', "Player ID", :class => "mt-label"
-                = text_field_tag 'player_id', '', :class => "mt-field"
+                = text_field_tag 'player_id', '', :class => "mt-field", 'ng-model' => 'filter.id'
                 br
                 = label_tag 'last_name', "Last Name", :class => "mt-label"
-                = text_field_tag 'last_name', '', :class => "mt-field"
+                = text_field_tag 'last_name', '', :class => "mt-field", 'ng-model' => 'filter.last_name'
             .w-col.w-col-6
               .mt-fields.unmargin.right-fields
                 = label_tag 'city', "City", :class => "mt-label "
-                = text_field_tag 'city', '', :class => "mt-field"
+                = text_field_tag 'city', '', :class => "mt-field", 'ng-model' => 'filter.city'
                 .w-block
-                = submit_tag "Search", :class => "button mt-search"
+                .button.mt-search ng-click="search()" Search
 
         .players
           .team_activity Players
@@ -56,7 +56,7 @@
               td 0
             tr
               td.activ Team Description
-              td Tiny Scrollbar can be used for scrolling content. It was built using the javascript jQuery library. Tiny scrollbar was designed to be a dynamic lightweight utility that gives webdesigners a powerfull way of enhancing a websites user interface.
+              td Tiny Scrollbar can be used
         .sep-block
           ul.team-list
             #scroll-teams
@@ -67,9 +67,12 @@
                   accordion-group heading="{{ group.name }}" ng-repeat="group in groups"
                     ul.sortable.sortable-players dropped-item='' data-team-id="{{group.id}}"
                       li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players"
-                        | {{player.profile.first_name}}
-                        = ' '
-                        | {{player.profile.last_name}}
+                        span
+                          | {{player.profile.first_name}}
+                          = ' '
+                          | {{player.profile.last_name}}
+                        span.country
+                          | {{ player.profile.city || "City" }}
           .mt-fields
             a.button.mt-add-team ng-click='open()' Add Team
 
