@@ -47,16 +47,19 @@
           tbody
             tr
               td.activ Team ID
-              td 1
+              td
+                | {{ selected_team.id }}
             tr
               td.activ Program Code
               td 1
             tr
               td.activ Team Name
-              td 0
+              td
+                | {{ selected_team.name }}
             tr
               td.activ Team Description
-              td Tiny Scrollbar can be used
+              td
+                | {{ selected_team.description }}
         .sep-block
           ul.team-list
             #scroll-teams
@@ -64,7 +67,10 @@
                 input ng-model="oneAtATime" type="checkbox"
                   | Open only one at a time
                 accordion close-others="oneAtATime"
-                  accordion-group heading="{{ group.name }}" ng-repeat="group in groups"
+                  accordion-group ng-repeat="group in groups"
+                    accordion-heading
+                      a class="accordion-toggle" ng-click="isOpen = !isOpen; selectTeam(group)"
+                        | {{ group.name }}
                     ul.sortable.sortable-players dropped-item='' data-team-id="{{group.id}}"
                       li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players"
                         span

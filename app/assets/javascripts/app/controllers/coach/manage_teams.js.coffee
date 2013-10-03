@@ -1,7 +1,10 @@
 window.manageTeamsCtrlProvider = (app) ->
 
   app.controller "ManageTeamsCtrl", ['$scope', '$modal', 'TeamsFactory', 'PlayersFactory', ($scope, $modal, TeamsFactory, PlayersFactory) ->
-    $scope.groups = TeamsFactory.query()
+    TeamsFactory.query((data) ->
+      $scope.groups = data
+      $scope.selected_team = data[0]
+      )
     $scope.players = PlayersFactory.query()
     $scope.filter = {}
 
@@ -28,4 +31,7 @@ window.manageTeamsCtrlProvider = (app) ->
         TeamsFactory.save team,
         (success_data) ->
           $scope.groups.push success_data
+
+    $scope.selectTeam = (team) ->
+      $scope.selected_team = team
   ]
