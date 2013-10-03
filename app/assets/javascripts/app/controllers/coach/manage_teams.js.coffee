@@ -12,8 +12,8 @@ window.manageTeamsCtrlProvider = (app) ->
 
     playersFilter = (el) ->
       ((if $scope.filter.id then parseInt($scope.filter.id) else el.id) is el.id) and
-      el.profile.city.search((if $scope.filter.city then new RegExp($scope.filter.city) else new RegExp(el.profile.city))) isnt -1 and
-      el.profile.last_name.search((if $scope.filter.last_name then new RegExp($scope.filter.last_name) else new RegExp(el.profile.last_name))) isnt -1
+      el.profile.city.search((if $scope.filter.city then new RegExp($scope.filter.city, "i") else new RegExp(el.profile.city))) isnt -1 and
+      el.profile.last_name.search((if $scope.filter.last_name then new RegExp($scope.filter.last_name, "i") else new RegExp(el.profile.last_name))) isnt -1
 
 
     $scope.open = ->
