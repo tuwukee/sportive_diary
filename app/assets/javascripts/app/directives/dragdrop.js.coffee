@@ -12,12 +12,17 @@ app.directive 'draggedItem', ->
           $(ui.helper).addClass("ui-draggable-helper")
     true
 
-app.directive 'droppedItem', ->
+app.directive 'sortedItem', ->
   link: (scope, elm, attrs, ctrl) ->
     elm.ready ->
       elm.sortable
         revert: true
 
+    true
+
+app.directive 'droppedItem', ->
+  link: (scope, elm, attrs, ctrl) ->
+    elm.ready ->
       elm.droppable
         revert: "invalid"
         drop: (e, ui) ->

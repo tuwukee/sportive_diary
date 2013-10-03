@@ -71,7 +71,7 @@
                     accordion-heading
                       a class="accordion-toggle" ng-click="isOpen = !isOpen; selectTeam(group)"
                         | {{ group.name }}
-                    ul.sortable.sortable-players dropped-item='' data-team-id="{{group.id}}"
+                    ul.sortable-players sorted-item='' dropped-item='' data-team-id="{{group.id}}"
                       li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players"
                         span
                           | {{player.profile.first_name}}
