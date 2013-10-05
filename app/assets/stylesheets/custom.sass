@@ -4,6 +4,7 @@
 
 body
   margin: 0
+  width: 100%
 
 img
   max-width: 100%
@@ -597,3 +598,10 @@ textarea.w-input
     margin-left: 83.33333333333334%
   .w-col-tiny-offset-11
     margin-left: 91.66666666666666%
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  ::i-block-chrome, body
+    .coach, .player
+      .one-column-emphasis.limited
+        width: 420px

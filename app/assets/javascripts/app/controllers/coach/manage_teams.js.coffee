@@ -1,11 +1,14 @@
 window.manageTeamsCtrlProvider = (app) ->
 
   app.controller "ManageTeamsCtrl", ['$scope', '$modal', 'TeamsFactory', 'PlayersFactory', ($scope, $modal, TeamsFactory, PlayersFactory) ->
-    TeamsFactory.query((data) ->
+    TeamsFactory.query (data) ->
       $scope.groups = data
       $scope.selected_team = data[0]
-      )
-    $scope.players = PlayersFactory.query()
+
+    PlayersFactory.query (data) ->
+      $scope.players = data
+      $scope.stable = data
+
     $scope.filter = {}
 
     $scope.search= ->
@@ -17,7 +20,6 @@ window.manageTeamsCtrlProvider = (app) ->
       ((if $scope.filter.id then parseInt($scope.filter.id) else el.id) is el.id) and
       el.profile.city.search((if $scope.filter.city then new RegExp($scope.filter.city, "i") else new RegExp(el.profile.city))) isnt -1 and
       el.profile.last_name.search((if $scope.filter.last_name then new RegExp($scope.filter.last_name, "i") else new RegExp(el.profile.last_name))) isnt -1
-
 
     $scope.open = ->
       modalInstance = $modal.open(
