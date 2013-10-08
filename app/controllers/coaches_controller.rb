@@ -1,5 +1,7 @@
 class CoachesController < ApplicationController
+  include CoachesHelper
   before_filter :coach_required
+  before_filter :find_coach, :only => [:show]
 
   def index
   end
@@ -7,16 +9,12 @@ class CoachesController < ApplicationController
   def manage_teams
   end
 
+  def show
+  end
+
   private
 
-  def coach_required
-    unless current_user
-      flash[:alert] = "You need to sign in or to sign up"
-      redirect_to root_path
-    else if !current_user.coach?
-        flash[:alert] = "You have to be a coach to have the rights to visit this page"
-        redirect_to root_path
-      end
-    end
+  def find_coach
+    @coach = Coach.find(params[:id], :include => :profile)
   end
 end

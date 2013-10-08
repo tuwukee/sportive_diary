@@ -29,8 +29,7 @@
 
   .w-col.w-col-3.w-clearfix
     .profile_pic ng-show="player"
-      = image_tag("profile.png", { :alt => 'Adrian Gilbert' })
-
+      player-gravatar-image data-gravatar-email="{{player[0].email}}"
 .w-row
   .w-col.w-col-6.w-clearfix
     a.button.prof_btn#left_btn href="#" = "Motivate"

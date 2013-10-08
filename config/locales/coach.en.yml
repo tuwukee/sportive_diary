@@ -1,6 +1,6 @@
 en:
   coach:
       subheader:
-      dashboard: "Dashboard"
-      manage_teams: "Manage Teams"
-      profile: "Profile"
+        dashboard: "Dashboard"
+        manage_teams: "Manage Teams"
+        profile: "Profile"

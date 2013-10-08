@@ -1,0 +1,44 @@
+= render "shared/subheader"
+= render "coaches/coach_subheader"
+.w-container.snippet.coach ng-controller="ShowCoachCtrl"
+  .w-row
+    .w-col.w-col-3.w-clearfix
+      .pic-section
+        .coach_name
+          = @coach.profile.full_name
+          a
+            | Edit
+        .coach_pic
+          coach-gravatar-image data-gravatar-email="#{@coach.email}"
+
+    .w-col.w-col-4.w-clearfix.down
+      table.one-column-emphasis.prof_tab
+        tbody
+          tr
+            td.activity Email
+            td.data = @coach.email
+          tr
+            td.activity Birthday
+            td.data = @coach.profile.birthday
+          tr
+            td.activity Country
+            td.data = @coach.profile.country
+          tr
+            td.activity City
+            td.data = @coach.profile.city
+
+    .w-col.w-col-4.w-clearfix.down
+      table.one-column-emphasis.prof_tab
+        tbody
+          tr
+            td.activity Gender
+            td.data = @coach.profile.gender
+          tr
+            td.activity Teams count
+            td.data = @coach.teams.count
+          tr
+            td.activity Plans Count
+            td.data 0
+          tr
+            td.activity Players count
+            td.data = @coach.players.count
