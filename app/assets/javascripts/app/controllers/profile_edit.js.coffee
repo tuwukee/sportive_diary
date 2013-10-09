@@ -11,7 +11,7 @@ window.profileEditCtrlProvider = (app) ->
       else
         return 1
 
-    $.get("../assets/app/data/cities.json")
+    $.get("http://#{document.location.host.toString()}/assets/app/data/cities.json")
       .success (data) ->
         map = {}
         countries = {}

@@ -1,0 +1,21 @@
+= render "shared/subheader"
+= render "coaches/coach_subheader"
+.w-container.snippet.coach ng-controller="ProfileEditCtrl"
+  .w-row.snippet-row
+    .w-col.w-col-3.w-clearfix
+      .pic_section
+        .coach_name
+          = @coach.profile.full_name
+        .coach_pic
+          coach-gravatar-image data-gravatar-email="#{@coach.email}"
+          .gravatar_link
+            a href="https://en.gravatar.com/" target="_blank"
+              | Change picture
+    .w-col.w-col-9.w-clearfix
+      = simple_form_for @coach do |f|
+        #error_explanation = f.error_notification
+        .s-fields
+          = render 'shared/profile_form', :f => f, :instance => @coach.class.name.downcase
+          = render 'shared/edit_form', :f => f
+          .actions
+            = f.button :submit, "Update", :class => "form-btn", :id => "sign_in"

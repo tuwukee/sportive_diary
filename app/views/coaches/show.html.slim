@@ -6,8 +6,9 @@
       .pic-section
         .coach_name
           = @coach.profile.full_name
-          a
-            | Edit
+          - if @coach.id == current_user.id
+            a href="/coaches/#{@coach.id}/edit"
+              | Edit
         .coach_pic
           coach-gravatar-image data-gravatar-email="#{@coach.email}"
 
