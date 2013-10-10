@@ -9,6 +9,7 @@ window.manageTeamsCtrlProvider = (app) ->
       $scope.players = data
       $scope.stable = data
 
+    $scope.oneAtATime = true
     $scope.filter = {}
 
     $scope.search= ->

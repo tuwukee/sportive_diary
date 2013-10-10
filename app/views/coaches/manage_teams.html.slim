@@ -64,9 +64,6 @@
         .sep-block
           ul.team-list
             #scroll-teams
-                label.checkbox
-                input ng-model="oneAtATime" type="checkbox"
-                  | Open only one at a time
                 accordion close-others="oneAtATime"
                   accordion-group ng-repeat="group in groups"
                     accordion-heading
