@@ -1,36 +1,40 @@
 = render "shared/subheader"
 = render "coaches/coach_subheader"
 .w-container.snippet.coach ng-controller="CoachDashboardnCtrl"
-  .w-row
-    .w-col.w-col-6.w-clearfix
-      .w-clearfix
-        .team_name Garden City Panthers
-        #scroll-players-index
-          table.one-column-emphasis
-            thead
-              tr
-                th.name scope="col" Player Name
-                th.data scope="col" Last Login
-                th.data scope="col" Last Completed
-                th.data scope="col" 5 Days inactive
+  - if @team.present?
+    .w-row
+      .w-col.w-col-6.w-clearfix
+        .w-clearfix
+          .team_name = @team.name
+          #scroll-players-index
+            table.one-column-emphasis
+              thead
+                tr
+                  th.name scope="col" Player Name
+                  th.data scope="col" Last Login
+                  th.data scope="col" Last Completed
+                  th.data scope="col" 5 Days inactive
+              tbody
+                = render :partial => 'coaches/table_player', :collection => @team.players(:joins => :profiles), :as => :player
+
+          a.button.manage_team href="/manage_teams" = "Manage Team"
+
+
+      .w-col.w-col-6
+        .w-clearfix
+          .team_activity Team Activity - Today
+          table.one-column-emphasis.limited
             tbody
-              = render :partial => 'coaches/table_player', :collection => @players, :as => :player
-
-        a.button.manage_team href="#" = "Manage Team"
-
-
-    .w-col.w-col-6
-      .w-clearfix
-        .team_activity Team Activity - Today
-        table.one-column-emphasis.limited
-          tbody
-            tr
-              td.activity Players Logged In
-              td 1
-            tr
-              td.activity Activities Completed
-              td 1
-            tr
-              td.activity Assessments Taken
-              td 0
-        = render :partial => "coaches/player_profile"
+              tr
+                td.activity Players Logged In
+                td 0
+              tr
+                td.activity Activities Completed
+                td 0
+              tr
+                td.activity Assessments Taken
+                td 0
+          = render :partial => "coaches/player_profile"
+  - else
+    .team_name
+      | You don't have any teams yet.

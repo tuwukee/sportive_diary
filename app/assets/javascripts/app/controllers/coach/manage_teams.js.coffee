@@ -36,4 +36,5 @@ window.manageTeamsCtrlProvider = (app) ->
 
     $scope.selectTeam = (team) ->
       $scope.selected_team = team
+      TeamsFactory.update team
   ]

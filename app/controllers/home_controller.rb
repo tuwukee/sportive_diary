@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def home
-    @players = current_user.players(:joins => :profiles) if current_user && current_user.coach?
+  	if current_user && current_user.coach?
+  	  @team = current_user.teams.where(:selected => true).first
+    end
   end
 end
