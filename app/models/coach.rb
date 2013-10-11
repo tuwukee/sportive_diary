@@ -13,6 +13,7 @@ class Coach < ActiveRecord::Base
 
   has_many :teams
   has_many :players
+  has_many :plans
   has_one :profile, :dependent => :destroy
 
   accepts_nested_attributes_for :profile, allow_destroy: true

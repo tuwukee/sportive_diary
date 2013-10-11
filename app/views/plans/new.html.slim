@@ -1,0 +1,85 @@
+= render "shared/subheader"
+= render "plans/plan_subheader"
+.w-container.snippet.coach ng-controller="ManageTeamsCtrl"
+  .w-row
+    .w-col.w-col-6
+      .w-clearfix
+        .team_activity Search Players
+
+
+        .players
+          .team_activity Players
+          .w-row.mt-fields
+            .w-col.w-col-6
+              .one-column-emphasis style="color:#404040;" Click here to invite player not currently in Sportive Diary
+            .w-col.w-col-6
+              = link_to "Add player", nil, :class => 'button mt-invite'
+          .sep-block
+            #scroll-players
+              ul.list
+                li.draggable-players dragged-item="" ng-repeat="player in players" data-player-id="{{player.id}}"
+                  span
+                    | {{ player.profile.first_name }}
+                    = " "
+                    | {{ player.profile.last_name }}
+
+                  span.country
+                    | {{ player.profile.city || "City" }}
+
+    .w-col.w-col-6.w-clearfix
+      .w-clearfix
+        .team_activity Team Management
+        table.one-column-emphasis.limited
+          tbody
+            tr
+              td.activ Team ID
+              td
+                | {{ selected_team.id }}
+            tr
+              td.activ Program Code
+              td
+                | {{ selected_team.id }}
+            tr
+              td.activ Team Name
+              td
+                | {{ selected_team.name }}
+            tr
+              td.activ Team Description
+              td
+                | {{ selected_team.description }}
+        .sep-block
+          ul.team-list
+            #scroll-teams
+                accordion close-others="oneAtATime"
+                  accordion-group ng-repeat="group in groups"
+                    accordion-heading
+                      a class="accordion-toggle" ng-click="isOpen = !isOpen; selectTeam(group)"
+                        | {{ group.name }}
+                    ul.sortable-players sorted-item='' dropped-item='' data-team-id="{{group.id}}"
+                      li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players"
+                        span
+                          | {{player.profile.first_name}}
+                          = ' '
+                          | {{player.profile.last_name}}
+                        span.country
+                          | {{ player.profile.city || "City" }}
+          .mt-fields
+            a.button.mt-add-team ng-click='open()' Add Team
+
+
+  script id="myModalContent.html" type="text/ng-template"
+    .mt-modal
+      .modal-header
+        h4 Create Team
+      .modal-body
+        form.mdl-form
+          .s-fields
+            label.s-label Name
+            input.s-field ng-model="team.name"
+            br
+            label.s-label for='description' Description
+            textarea.s-field#description ng-model="team.description"
+      .modal-footer
+        .s-fields
+          a.button.form-btn ng-click="ok()" Ok
+          a.button.form-btn ng-click="cancel()" Cancel

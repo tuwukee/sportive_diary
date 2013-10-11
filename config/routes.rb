@@ -18,6 +18,7 @@ SportiveDiary::Application.routes.draw do
   resources :players
   resources :coaches
   resources :parents
+  resources :plans, :only => [:index, :new]
   resources :teams, :only => [:update, :create, :index]
 
   get "/manage_teams", :to => "coaches#manage_teams"

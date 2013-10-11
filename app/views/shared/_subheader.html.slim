@@ -4,13 +4,13 @@
       .w-row
         - if current_user.coach?
           .w-col.w-col-8.nav-bar
-            a.nav-link href="#" target="_self" = t("subheader.corner")
-            a.nav-link href="#" target="_self" = t("subheader.plan")
-            a.nav-link href="#" target="_self" = t("subheader.skills")
-            a.nav-link href="#" target="_self" = t("subheader.videos")
+            a.nav-link href="/" = t("subheader.corner")
+            a.nav-link href="/plans" = t("subheader.plan")
+            a.nav-link href="#" = t("subheader.skills")
+            a.nav-link href="#" = t("subheader.videos")
         - elsif current_user.player?
           .w-col.w-col-8.nav-bar
-            a.nav-link href="#" target="_self" = t("subheader.players_corner")
-            a.nav-link href="#" target="_self" = t("subheader.plan")
-            a.nav-link href="#" target="_self" = t("subheader.skills")
-            a.nav-link href="#" target="_self" = t("subheader.videos")
+            a.nav-link href="#" = t("subheader.players_corner")
+            a.nav-link href="#" = t("subheader.plan")
+            a.nav-link href="#" = t("subheader.skills")
+            a.nav-link href="#" = t("subheader.videos")
