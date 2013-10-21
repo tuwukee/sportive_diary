@@ -35,6 +35,18 @@ window.manageTeamsCtrlProvider = (app) ->
         (success_data) ->
           $scope.groups.push success_data
 
+    $scope.invite = ->
+      modalInstance = $modal.open(
+        templateUrl: "addPlayer.html"
+        controller: 'ModalCtrl'
+      )
+
+      modalInstance.result.then (data) ->
+        $.ajax
+          type: "POST"
+          url: "/invite"
+          data: data
+
     $scope.selectTeam = (team) ->
       $scope.selected_team = team
       TeamsFactory.update team

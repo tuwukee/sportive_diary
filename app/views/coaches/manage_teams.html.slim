@@ -27,7 +27,7 @@
             .w-col.w-col-6
               .one-column-emphasis style="color:#404040;" Click here to invite player not currently in Sportive Diary
             .w-col.w-col-6
-              = link_to "Add player", nil, :class => 'button mt-invite'
+              = link_to "Add player", '#', :class => 'button mt-invite', 'ng-click' => "invite()"
           .sep-block
             #scroll-players
               ul.list
@@ -84,7 +84,8 @@
   script id="myModalContent.html" type="text/ng-template"
     .mt-modal
       .modal-header
-        h4 Create Team
+        legend
+          h4 Create Team
       .modal-body
         form.mdl-form
           .s-fields
@@ -96,4 +97,19 @@
       .modal-footer
         .s-fields
           a.button.form-btn ng-click="ok()" Ok
+          a.button.form-btn ng-click="cancel()" Cancel
+
+  script id="addPlayer.html" type="text/ng-template"
+    .mt-modal
+      .modal-header
+        legend
+          h4 Add Player
+      .modal-body
+        form.mdl-form
+          .s-fields
+            label.s-label Email
+            input.s-field type='email' ng-model="player.email"
+      .modal-footer
+        .s-fields
+          a.button.form-btn ng-click="add()" type="submit" Ok
           a.button.form-btn ng-click="cancel()" Cancel

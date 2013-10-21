@@ -22,5 +22,6 @@ SportiveDiary::Application.routes.draw do
   resources :teams, :only => [:update, :create, :index]
 
   get "/manage_teams", :to => "coaches#manage_teams"
+  post "/invite", :to => "invitations#create"
   root :to => 'home#home'
 end
