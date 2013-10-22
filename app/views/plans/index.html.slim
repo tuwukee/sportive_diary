@@ -1,2 +1,13 @@
 = render "shared/subheader"
 = render "plans/plan_subheader"
+.w-container.snippet.coach
+  - if @plans.any?
+    legend
+      .plans_h Plans
+    ul.plans
+      - @plans.each do |plan|
+        li id="plan_#{plan.id}"
+          = link_to plan.name, '#'
+          .remove-icon
+            = link_to  plan_path(plan), :method => :delete, :remote => true do
+              = fa_icon "trash"

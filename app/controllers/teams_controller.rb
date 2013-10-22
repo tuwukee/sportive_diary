@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
+  include CoachesHelper
+  before_filter :coach_required
   before_filter :find_team, :only => [:update]
   before_filter :set_coach, :only => [:create]
   after_filter :falsify_all_others, :only => [:update]
@@ -29,7 +31,7 @@ class TeamsController < ApplicationController
   end
 
   def set_coach
-    params[:team][:coach_id] = current_user.id if current_user.coach?
+    params[:team][:coach_id] = current_user.id
   end
 
   def find_team
