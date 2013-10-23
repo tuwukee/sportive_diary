@@ -14,6 +14,6 @@ class PlayersController < ApplicationController
   private
 
   def find_player
-    @player = Player.find params[:id]
+    @player = Player.find params[:id] || not_found
   end
 end

@@ -18,6 +18,6 @@ class CoachesController < ApplicationController
   private
 
   def find_coach
-    @coach = Coach.find(params[:id], :include => :profile)
+    @coach = Coach.find(params[:id], :include => :profile) || not_found
   end
 end
