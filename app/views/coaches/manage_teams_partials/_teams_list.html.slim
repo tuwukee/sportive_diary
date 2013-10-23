@@ -4,8 +4,12 @@
         accordion close-others="oneAtATime"
           accordion-group ng-repeat="group in groups"
             accordion-heading
-              a class="accordion-toggle" ng-click="isOpen = !isOpen; selectTeam(group)"
-                | {{ group.name }}
+              .accordion-toggle id="team_{{group.id}}"
+                a ng-click="isOpen = !isOpen; selectTeam(group)"
+                  | {{ group.name }}
+                .remove-team
+                  a rel="nofollow" data-remote="true" data-method="delete" href="/teams/{{group.id}}"
+                    = fa_icon "minus"
             ul.sortable-players sorted-item='' dropped-item='' data-team-id="{{group.id}}"
               li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players"
                 span

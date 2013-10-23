@@ -59,12 +59,16 @@ body.modal-open,
   padding: 4px 15px;
 }
 
-a.accordion-toggle, a.accordion-toggle:hover {
+a.accordion-toggle, a.accordion-toggle:hover, .accordion-toggle a, .accordion-toggle a:hover {
   color: #5C5C5C;
 }
 
 .accordion-toggle:hover {
   background-color: #EFF2FF;
+}
+
+.accordion-toggle:hover .remove-team {
+  display: inline;
 }
 
 .accordion-toggle {

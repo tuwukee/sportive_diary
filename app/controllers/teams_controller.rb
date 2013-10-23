@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   include CoachesHelper
   before_filter :coach_required
-  before_filter :find_team, :only => [:update]
+  before_filter :find_team, :only => [:update, :destroy]
   before_filter :set_coach, :only => [:create]
   after_filter :falsify_all_others, :only => [:update]
 
@@ -22,6 +22,13 @@ class TeamsController < ApplicationController
       @team.players << player unless @team.players.include? player
     end
     render :json => @team
+  end
+
+  def destroy
+    @team.destroy
+    respond_to do |format|
+      format.js { render :layout => false }
+    end
   end
 
   private
