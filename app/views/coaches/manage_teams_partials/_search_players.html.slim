@@ -1,0 +1,16 @@
+.team_activity Search Players
+= form_tag '#' do
+  .w-row
+    .w-col.w-col-6
+      .mt-fields
+        = label_tag 'player_id', "Player ID", :class => "mt-label"
+        = text_field_tag 'player_id', '', :class => "mt-field", 'ng-model' => 'filter.id'
+        br
+        = label_tag 'last_name', "Last Name", :class => "mt-label"
+        = text_field_tag 'last_name', '', :class => "mt-field", 'ng-model' => 'filter.last_name', 'typeahead' => "player.profile.last_name for player in stable | filter:$viewValue  | limitTo:8"
+    .w-col.w-col-6
+      .mt-fields.unmargin.right-fields
+        = label_tag 'city', "City", :class => "mt-label "
+        = text_field_tag 'city', '', :class => "mt-field", 'ng-model' => 'filter.city', 'typeahead' => "player.profile.city for player in stable | filter:$viewValue  | limitTo:8", 'autocomplete' => 'off'
+        .w-block
+        .button.mt-search ng-click="search()" Search

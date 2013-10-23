@@ -1,0 +1,14 @@
+script id="addPlayer.html" type="text/ng-template"
+  .mt-modal
+    .modal-header
+      legend
+        h4 Add Player
+    .modal-body
+      form.mdl-form
+        .s-fields
+          label.s-label Email
+          input.s-field type='email' ng-model="player.email"
+    .modal-footer
+      .s-fields
+        a.button.form-btn ng-click="add()" type="submit" Ok
+        a.button.form-btn ng-click="cancel()" Cancel

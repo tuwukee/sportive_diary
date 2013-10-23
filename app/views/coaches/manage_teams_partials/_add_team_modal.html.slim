@@ -1,0 +1,17 @@
+script id="myModalContent.html" type="text/ng-template"
+  .mt-modal
+    .modal-header
+      legend
+        h4 Create Team
+    .modal-body
+      form.mdl-form
+        .s-fields
+          label.s-label Name
+          input.s-field ng-model="team.name"
+          br
+          label.s-label for='description' Description
+          textarea.s-field#description ng-model="team.description"
+    .modal-footer
+      .s-fields
+        a.button.form-btn ng-click="ok()" Ok
+        a.button.form-btn ng-click="cancel()" Cancel

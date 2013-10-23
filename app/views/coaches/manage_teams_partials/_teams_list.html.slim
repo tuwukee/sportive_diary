@@ -1,0 +1,18 @@
+.sep-block
+  ul.team-list
+    #scroll-teams
+        accordion close-others="oneAtATime"
+          accordion-group ng-repeat="group in groups"
+            accordion-heading
+              a class="accordion-toggle" ng-click="isOpen = !isOpen; selectTeam(group)"
+                | {{ group.name }}
+            ul.sortable-players sorted-item='' dropped-item='' data-team-id="{{group.id}}"
+              li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players"
+                span
+                  | {{player.profile.first_name}}
+                  = ' '
+                  | {{player.profile.last_name}}
+                span.country
+                  | {{ player.profile.city || "City" }}
+  .mt-fields
+    a.button.mt-add-team ng-click='open()' Add Team

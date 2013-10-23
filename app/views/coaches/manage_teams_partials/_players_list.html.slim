@@ -1,0 +1,17 @@
+.players
+  .team_activity Players
+  .w-row.mt-fields
+    .w-col.w-col-6
+      .one-column-emphasis style="color:#404040;" Click here to invite player not currently in Sportive Diary
+    .w-col.w-col-6
+      = link_to "Add player", '#', :class => 'button mt-invite', 'ng-click' => "invite()"
+  .sep-block
+    #scroll-players
+      ul.list
+        li.draggable-players dragged-item="" ng-repeat="player in players" data-player-id="{{player.id}}"
+          span
+            | {{ player.profile.first_name }}
+            = " "
+            | {{ player.profile.last_name }}
+          span.country
+            | {{ player.profile.city || "City" }}
