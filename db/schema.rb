@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131010100258) do
+ActiveRecord::Schema.define(:version => 20131022143458) do
 
   create_table "city", :id => false, :force => true do |t|
     t.integer "id",                       :null => false
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(:version => 20131010100258) do
     t.text    "language",                 :null => false
     t.boolean "isofficial",               :null => false
     t.float   "percentage",               :null => false
+  end
+
+  create_table "drills", :force => true do |t|
+    t.integer  "plan_id",     :null => false
+    t.string   "name"
+    t.integer  "repetitions"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "parents", :force => true do |t|
