@@ -19,7 +19,7 @@ class TeamsController < ApplicationController
 
     if params[:player_id].present?
       player = Player.find(params[:player_id])
-      @team.players << player unless @team.players.include? player
+      @team.players.include? player ?  @team.players.delete(player) :  @team.players << player
     end
     render :json => @team
   end

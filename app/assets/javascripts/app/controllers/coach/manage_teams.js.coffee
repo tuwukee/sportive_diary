@@ -35,6 +35,12 @@ window.manageTeamsCtrlProvider = (app) ->
         (success_data) ->
           $scope.groups.push success_data
 
+    $scope.updatePlayer = (player, team) ->
+      data =
+        player_id: player.id
+        id: team.id
+      TeamsFactory.update data
+
     $scope.invite = ->
       modalInstance = $modal.open(
         templateUrl: "addPlayer.html"
