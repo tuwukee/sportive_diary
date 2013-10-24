@@ -11,7 +11,7 @@
                   a rel="nofollow" data-remote="true" data-method="delete" href="/teams/{{group.id}}"
                     = fa_icon "minus"
             ul.sortable-players sorted-item='' dropped-item='' data-team-id="{{group.id}}"
-              li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players" ng-dblclick="updatePlayer(player, group); deleted = ! deleted" ng-show="!deleted"
+              li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players" ng-dblclick="removePlayer(player, group); deleted = ! deleted" ng-show="!deleted"
                 span
                   | {{player.profile.first_name}}
                   = ' '

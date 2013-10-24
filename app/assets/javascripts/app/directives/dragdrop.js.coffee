@@ -17,7 +17,6 @@ app.directive 'sortedItem', ->
     elm.ready ->
       elm.sortable
         revert: true
-
     true
 
 app.directive 'droppedItem', ->

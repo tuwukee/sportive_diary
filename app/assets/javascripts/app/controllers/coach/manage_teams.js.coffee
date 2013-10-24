@@ -35,10 +35,11 @@ window.manageTeamsCtrlProvider = (app) ->
         (success_data) ->
           $scope.groups.push success_data
 
-    $scope.updatePlayer = (player, team) ->
+    $scope.removePlayer = (player, team) ->
       data =
         player_id: player.id
         id: team.id
+        remove: true
       TeamsFactory.update data
 
     $scope.invite = ->
