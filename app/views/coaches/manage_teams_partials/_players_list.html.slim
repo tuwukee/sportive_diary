@@ -8,7 +8,7 @@
   .sep-block
     #scroll-players
       ul.list
-        li.draggable-players dragged-item="" ng-repeat="player in players" data-player-id="{{player.id}}"
+        li.draggable-players dragged-item="" ng-repeat="player in players" data-player-id="{{player.id}}" scroll="" height='440'
           span
             | {{ player.profile.first_name }}
             = " "

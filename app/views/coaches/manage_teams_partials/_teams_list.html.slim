@@ -3,7 +3,7 @@
     #scroll-teams
         accordion close-others="oneAtATime"
           accordion-group ng-repeat="group in groups"
-            accordion-heading
+            accordion-heading accordion-scroll="" height='440'
               .accordion-toggle id="team_{{group.id}}" ng-click="isOpen = !isOpen; selectTeam(group)"
                 a
                   | {{ group.name }}

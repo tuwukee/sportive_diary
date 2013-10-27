@@ -14,3 +14,10 @@ angular.module('app.factories', ['ngResource'])
     query:  { method:'GET', isArray:true}
   })
 ])
+.factory("DrillsFactory", ["$resource", ($resource) ->
+  TeamsFactory = $resource("drills/:id", {id: "@id"},  {
+    update: { method: 'PUT' },
+    query:  { method:'GET', isArray:true}
+  })
+])
+

@@ -328,15 +328,6 @@ $(document).ready ->
     jQuery.fn.extend slimscroll: jQuery.fn.slimScroll
   ) jQuery
 
-
-  $scroll = $('#scroll-players')
-  if $scroll.height() > 440
-    $scroll.slimscroll({ height: '440px', wheelStep: 3 })
-
   $scroll = $('#scroll-players-index')
   if $scroll.height() > 469
     $scroll.slimscroll({ height: '469px', wheelStep: 1 })
-
-  $scroll = $('#scroll-teams')
-  if $scroll.height() > 440
-    $scroll.slimscroll({ height: '440px', wheelStep: 1 })
