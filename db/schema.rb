@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20131022143458) do
   add_index "coaches", ["reset_password_token"], :name => "index_coaches_on_reset_password_token", :unique => true
 
   create_table "drills", :force => true do |t|
-    t.integer  "plan_id",     :null => false
+    t.integer  "plan_id"
     t.string   "name"
     t.integer  "repetitions"
     t.datetime "created_at",  :null => false
