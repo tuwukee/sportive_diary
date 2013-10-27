@@ -6,29 +6,30 @@
       .w-clearfix
         .team_activity
           | {{ selected_drill.name }}
-
+        .one-column-emphasis.drill-descr
+          | {{ selected_drill.description }}
 
         .players
           .team_activity Drills
           #scroll-drills
             ul.list
-              li.draggable-players dragged-item="" ng-repeat="drill in drills" data-drill-id="{{drill.id}}" scroll="" height='390'
+              li.draggable-players dragged-item="" ng-repeat="drill in drills" data-drill-id="{{drill.id}}" scroll="" height='390' ng-click="selectDrill(drill)"
                 span
                   | {{ drill.name }}
 
 
     .w-col.w-col-6.w-clearfix
       .w-clearfix
-        .team_activity Team Management
+        .team_activity Development Plan
 
         .sep-block
           ul.team-list
             #scroll-teams
                 accordion close-others="oneAtATime"
-                  accordion-group ng-repeat="group in groups"
+                  accordion-group ng-repeat="plan in plans"
                     accordion-heading
-                      a class="accordion-toggle" ng-click="isOpen = !isOpen; selectTeam(group)"
-                        | {{ group.name }}
+                      a class="accordion-toggle" ng-click="isOpen = !isOpen"
+                        | {{ plan.name }}
                     ul.sortable-players sorted-item='' dropped-item='' data-team-id="{{group.id}}"
                       li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players"
                         span
@@ -37,6 +38,3 @@
                           | {{player.profile.last_name}}
                         span.country
                           | {{ player.profile.city || "City" }}
-          .mt-fields
-            a.button.mt-add-team ng-click='open()' Add Team
-

@@ -4,6 +4,7 @@ class CreateDrills < ActiveRecord::Migration
       t.references :plan
       t.string :name
       t.integer :repetitions
+      t.text :description
 
       t.timestamps
     end

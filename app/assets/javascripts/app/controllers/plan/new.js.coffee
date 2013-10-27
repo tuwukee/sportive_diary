@@ -4,4 +4,7 @@ window.newPlanCtrlProvider = (app) ->
     DrillsFactory.query (data) ->
       $scope.drills = data
       $scope.selected_drill = data[0]
+
+    $scope.selectDrill = (drill) ->
+      $scope.selected_drill = drill
   ]

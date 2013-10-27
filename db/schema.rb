@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20131022143458) do
     t.integer  "plan_id"
     t.string   "name"
     t.integer  "repetitions"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
