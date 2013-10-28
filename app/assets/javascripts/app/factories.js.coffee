@@ -3,7 +3,7 @@
 angular.module('app.factories', ['ngResource'])
 .factory("PlayersFactory", ["$resource", ($resource) ->
   $resource("players/:id", {id: "@id"}, {
-    update: {method: 'PUT'},
+    update: { method: 'PUT' },
     query:  { method:'GET', isArray:true}
   })
 ])
@@ -15,9 +15,16 @@ angular.module('app.factories', ['ngResource'])
   })
 ])
 .factory("DrillsFactory", ["$resource", ($resource) ->
-  TeamsFactory = $resource("drills/:id", {id: "@id"},  {
+  DrillsFactory = $resource("/drills/:id", {id: "@id"},  {
     update: { method: 'PUT' },
     query:  { method:'GET', isArray:true}
   })
 ])
+.factory("PlansFactory", ["$resource", ($resource) ->
+  PlansFactory = $resource("/plans/:id", {id: "@id"},  {
+    update: { method: 'PUT' },
+    save:   { method:'POST' }
+  })
+])
+
 

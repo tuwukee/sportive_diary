@@ -1,6 +1,6 @@
 = render "shared/subheader"
 = render "plans/plan_subheader"
-.w-container.snippet.coach ng-controller="NewPlanCtrl"
+.w-container.snippet.coach.plan ng-controller="NewPlanCtrl"
   .w-row
     .w-col.w-col-6
       .w-clearfix
@@ -21,20 +21,25 @@
     .w-col.w-col-6.w-clearfix
       .w-clearfix
         .team_activity Development Plan
+        = form_tag '#' do
+          .mt-fields
+            = label_tag 'name', "Name", :class => "mt-label"
+            = text_field_tag 'name', '', :class => "mt-field", 'ng-model' => 'plan.name'
+            br
+            = label_tag 'description', "Description", :class => "mt-label", :for => "description"
+            = text_area_tag 'desvription', '', :class => "mt-field", 'ng-model' => 'plan.description'
+            .w-block
+            .button.save-plan ng-click="savePlan()" Save Plan
 
         .sep-block
           ul.team-list
             #scroll-teams
                 accordion close-others="oneAtATime"
-                  accordion-group ng-repeat="plan in plans"
+                  accordion-group ng-repeat="temp in temps"
                     accordion-heading
                       a class="accordion-toggle" ng-click="isOpen = !isOpen"
-                        | {{ plan.name }}
-                    ul.sortable-players sorted-item='' dropped-item='' data-team-id="{{group.id}}"
-                      li.draggable-players data-player-id="{{player.id}}" ng-repeat="player in group.players"
+                        | {{ temp }}
+                    ul.sortable-players sorted-item='' dropped-item='' data-team-id="{{temp.id}}"
+                      li.draggable-players data-player-id="{{temp.id}}" ng-repeat="temp in temp.temps"
                         span
-                          | {{player.profile.first_name}}
-                          = ' '
-                          | {{player.profile.last_name}}
-                        span.country
-                          | {{ player.profile.city || "City" }}
+                          | {{ temp }}

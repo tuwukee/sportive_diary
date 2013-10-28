@@ -1,10 +1,16 @@
 class PlansController < ApplicationController
   include CoachesHelper
   before_filter :coach_required
+  before_filter :set_coach, :only => [:create]
   before_filter :find_plan, :only => [:destroy]
 
   def index
     @plans = current_user.plans
+  end
+
+  def create
+    plan = Plan.create params[:plan]
+    render :json => plan
   end
 
   def destroy
@@ -18,5 +24,9 @@ class PlansController < ApplicationController
 
   def find_plan
     @plan = Plan.find params[:id]
+  end
+
+  def set_coach
+    params[:plan][:coach_id] = current_user.id
   end
 end
