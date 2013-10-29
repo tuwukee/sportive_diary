@@ -18,11 +18,12 @@ SportiveDiary::Application.routes.draw do
   resources :players
   resources :coaches
   resources :parents
-  resources :plans, :only => [:index, :new, :destroy, :create]
+  resources :plans, :only => [:index, :new, :destroy, :create, :update]
   resources :teams, :only => [:update, :create, :index, :destroy]
   resources :drills, :only => [:index]
 
   get "/manage_teams", :to => "coaches#manage_teams"
+  get "/plans/edit", :to => "plans#edit"
   post "/invite", :to => "invitations#create"
   root :to => 'home#home'
 end

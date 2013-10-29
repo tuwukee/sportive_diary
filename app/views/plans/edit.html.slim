@@ -1,0 +1,27 @@
+= render "shared/subheader"
+= render "plans/plan_subheader"
+.w-container.snippet.coach.plan ng-controller="AssignPlanCtrl"
+  #coach-id data-id="#{current_user.id}"
+  .w-row
+    .w-col.w-col-6
+      .w-clearfix
+        .one-column-emphasis.select-descr
+          | Select a plan below to view more details
+        .team_activity Sportive Diary Plans
+        #scroll-drills
+          ul.list
+            li.plan ng-repeat="plan in common_plans" scroll="" height='185' ng-click="selectPlan(plan)"
+              span
+                | {{ plan.name }}
+
+        .team_activity Custom Plans
+        #scroll-drills
+          ul.list
+            li.plan ng-repeat="plan in current_plans" scroll="" height='185' ng-click="selectPlan(plan)"
+              span
+                | {{ plan.name }}
+
+
+    .w-col.w-col-6.w-clearfix
+      .w-clearfix
+        .team_activity Assign Plan

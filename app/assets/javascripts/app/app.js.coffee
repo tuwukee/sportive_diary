@@ -5,6 +5,7 @@
 #= require app/controllers/coach/manage_teams
 #= require app/controllers/coach/show
 #= require app/controllers/plan/new
+#= require app/controllers/plan/assign
 #= require app/controllers/profile_edit
 #= require app/controllers/modal
 #= require app/factories
@@ -24,3 +25,4 @@ manageTeamsCtrlProvider(app)
 profileEditCtrlProvider(app)
 showCoachCtrlProvider(app)
 newPlanCtrlProvider(app)
+assignPlanCtrlProvider(app)
