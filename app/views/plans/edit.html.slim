@@ -5,23 +5,52 @@
   .w-row
     .w-col.w-col-6
       .w-clearfix
+        .team_activity
+          | {{ selected_plan.name }}
         .one-column-emphasis.select-descr
-          | Select a plan below to view more details
+          | {{ selected_plan.description }}
         .team_activity Sportive Diary Plans
         #scroll-drills
           ul.list
-            li.plan ng-repeat="plan in common_plans" scroll="" height='185' ng-click="selectPlan(plan)"
+            li.plan ng-repeat="plan in common_plans" scroll="" height='185' ng-click="selectPlan(plan)" dragged-item=""
               span
                 | {{ plan.name }}
 
         .team_activity Custom Plans
         #scroll-drills
           ul.list
-            li.plan ng-repeat="plan in current_plans" scroll="" height='185' ng-click="selectPlan(plan)"
+            li.plan ng-repeat="plan in current_plans" scroll="" height='185' ng-click="selectPlan(plan)" dragged-item=""
               span
                 | {{ plan.name }}
 
 
     .w-col.w-col-6.w-clearfix
       .w-clearfix
-        .team_activity Assign Plan
+        .row
+          .w-col.w-col-6
+            .team_activity Assign Plan
+          .w-col.w-col-6
+            select.select.s-field ng-model="selection" ng-options="item for item in items"
+        .animate-switch-container ng-switch="" on="selection"
+          .option-assign ng-switch-when="Team"
+            .w-clearfix
+              .team_activity Teams
+              #scroll-teams
+                ul.list
+                  li.team-area ng-repeat="team in teams" scroll="" height='440'
+                    .title
+                      | {{ team.name }}
+                    .plan
+                      .drop-area dropped-item='' data-team-id="{{team.id}}"
+                        | No Active Developmental Plan
+
+          .option-assign ng-switch-when="Player"
+            .w-clearfix
+              .team_activity Players
+              #scroll-players
+                ul.list
+                  li.player-area ng-repeat="player in players" scroll="" height='440'
+                    .title
+                      | {{ player.profile.first_name + ' ' + player.profile.last_name }}
+                    .plan
+                      | Active Plan:
