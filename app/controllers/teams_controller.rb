@@ -11,7 +11,7 @@ class TeamsController < ApplicationController
   end
 
   def index
-    render :json => current_user.teams.to_json(:include => { :players => { :include => :profile } })
+    render :json => current_user.teams.to_json(:include => [ { :players => { :include => :profile } }, :plan] )
   end
 
   def update

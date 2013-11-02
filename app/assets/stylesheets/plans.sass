@@ -19,6 +19,8 @@ ul.list
 
 .option-assign
   margin-top: 50px
+.no-plan
+  opacity: 0.35
 
 .plan
   .mt-fields *
@@ -29,14 +31,23 @@ ul.list
     margin-left: 56%
     width: 32%
     padding: 10px
+
   select
     margin-left: 90px
     margin-top: 30px
 
+  ul.plans
+    list-style-type: none
+    padding-left: 0
+
+  .stable
+    background-color: #F2F2F2
+  .op
+    opacity: 1 !important
+
   #scroll-teams
     width: 95%
     margin-bottom: 20px
-
   .team-area, .player-area
     height: 100px
     margin-bottom: 10px
@@ -45,8 +56,11 @@ ul.list
       font-size: 14px
       margin-top: 8px
       margin-bottom: 15px
+
   .drop-area
     height: 20px
+    .remove-icon
+      margin-top: 10px
   .a-plan
     margin-top: 10px
 

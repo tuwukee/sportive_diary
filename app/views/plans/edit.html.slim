@@ -31,7 +31,7 @@
             .team_activity Assign Plan
           .w-col.w-col-6
             select.select.s-field ng-model="selection" ng-options="item for item in items"
-        .animate-switch-container ng-switch="" on="selection"
+        .switch-container ng-switch="" on="selection"
           .option-assign ng-switch-when="Team"
             .w-clearfix
               .team_activity Teams
@@ -41,8 +41,17 @@
                     .title
                       | {{ team.name }}
                     .plan
-                      .drop-area dropped-item='' data-team-id="{{team.id}}"
-                        | No Active Developmental Plan
+                      .drop-area data-team-id="{{team.id}}"
+                        .row
+                          .w-col.w-col-9.op dropped-plan=''
+                            .no-plan ng-show="!team.plan" No Active Developmental Plan
+                            ul.plans
+                              li.plan.ui-draggable-helper.stable style="position: relative; left: 0px; top: 0px;" ng-show="team.plan"
+                                | {{ team.plan.name }}
+                          .w-col.w-col-3
+                            a.remove-icon ng-show="team.plan" hide-plan=''
+                              i.icon-trash
+
 
           .option-assign ng-switch-when="Player"
             .w-clearfix
@@ -53,4 +62,13 @@
                     .title
                       | {{ player.profile.first_name + ' ' + player.profile.last_name }}
                     .plan
-                      | Active Plan:
+                      .drop-area data-team-id="{{player.id}}"
+                        .row
+                          .w-col.w-col-9.op dropped-plan=''
+                            .no-plan ng-show="!player.plan" No Active Developmental Plan
+                            ul.plans
+                              li.plan.ui-draggable-helper.stable style="position: relative; left: 0px; top: 0px;" ng-show="player.plan"
+                                | {{ player.plan.name }}
+                          .w-col.w-col-3
+                            a.remove-icon ng-show="player.plan" hide-plan=''
+                              i.icon-trash
