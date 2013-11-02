@@ -3,6 +3,7 @@ class Plan < ActiveRecord::Base
   belongs_to :coach
   has_many :drills
   has_many :teams
+  has_many :players
 
   validates :name, :presence => true
 end

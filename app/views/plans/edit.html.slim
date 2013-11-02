@@ -12,14 +12,14 @@
         .team_activity Sportive Diary Plans
         #scroll-drills
           ul.list
-            li.plan ng-repeat="plan in common_plans" scroll="" height='185' ng-click="selectPlan(plan)" dragged-item=""
+            li.plan ng-repeat="plan in common_plans" scroll="" height='185' ng-click="selectPlan(plan)" dragged-item="" data-plan-id="{{plan.id}}"
               span
                 | {{ plan.name }}
 
         .team_activity Custom Plans
         #scroll-drills
           ul.list
-            li.plan ng-repeat="plan in current_plans" scroll="" height='185' ng-click="selectPlan(plan)" dragged-item=""
+            li.plan ng-repeat="plan in current_plans" scroll="" height='185' ng-click="selectPlan(plan)" dragged-item="" data-plan-id="{{plan.id}}"
               span
                 | {{ plan.name }}
 
@@ -30,7 +30,7 @@
           .w-col.w-col-6
             .team_activity Assign Plan
           .w-col.w-col-6
-            select.select.s-field ng-model="selection" ng-options="item for item in items"
+            select.select.s-field ng-model="selection" ng-options="item for item in items" ng-click="refresh()"
         .switch-container ng-switch="" on="selection"
           .option-assign ng-switch-when="Team"
             .w-clearfix
@@ -41,9 +41,9 @@
                     .title
                       | {{ team.name }}
                     .plan
-                      .drop-area data-team-id="{{team.id}}"
+                      .drop-area
                         .row
-                          .w-col.w-col-9.op dropped-plan=''
+                          .w-col.w-col-9.op dropped-plan='' team='true' data-team-id="{{team.id}}"
                             .no-plan ng-show="!team.plan" No Active Developmental Plan
                             ul.plans
                               li.plan.ui-draggable-helper.stable style="position: relative; left: 0px; top: 0px;" ng-show="team.plan"
@@ -62,13 +62,13 @@
                     .title
                       | {{ player.profile.first_name + ' ' + player.profile.last_name }}
                     .plan
-                      .drop-area data-team-id="{{player.id}}"
+                      .drop-area
                         .row
-                          .w-col.w-col-9.op dropped-plan=''
+                          .w-col.w-col-9.op dropped-plan='' data-player-id="{{player.id}}"
                             .no-plan ng-show="!player.plan" No Active Developmental Plan
                             ul.plans
                               li.plan.ui-draggable-helper.stable style="position: relative; left: 0px; top: 0px;" ng-show="player.plan"
                                 | {{ player.plan.name }}
                           .w-col.w-col-3
-                            a.remove-icon ng-show="player.plan" hide-plan=''
+                            a.remove-icon ng-show="player.plan" hide-plan='' player='true'
                               i.icon-trash

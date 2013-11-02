@@ -50,14 +50,15 @@ app.directive 'droppedPlan', ->
           $(this).find(".plans").append(newItem)
           $(this).parent().find(".remove-icon").toggle()
 
-
           $(this).droppable('disable')
 
-          #$.ajax
-          #  type: 'put'
-          #  url: "/teams/" + $(this).data("team-id")
-          #  data:
-          #    player_id: ui.draggable.data('player-id')
+          url = if attrs.team then "/teams/#{$(this).data('team-id')}" else "/players/#{$(this).data('player-id')}"
+
+          $.ajax
+            type: 'put'
+            url: url
+            data:
+              plan_id: ui.draggable.data('plan-id')
     true
 
 app.directive 'hidePlan', ->
@@ -67,5 +68,14 @@ app.directive 'hidePlan', ->
       area = elm.parents(".drop-area")
       area.find(".stable").remove()
       area.find(".no-plan").toggle()
-      area.find(".row").find(".w-col-9").droppable('enable')
+      sub_area = area.find(".row").find(".w-col-9")
+      sub_area.droppable('enable')
+
+      url = if attrs.player then "/players/#{sub_area.data('player-id')}" else "/teams/#{sub_area.data('team-id')}"
+
+      $.ajax
+        type: 'put'
+        url: url
+        data:
+          remove_plan: true
     true

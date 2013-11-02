@@ -16,11 +16,14 @@ class TeamsController < ApplicationController
 
   def update
     @team.update_attribute(:selected, true)
+    @team.update_attribute(:plan_id, params[:plan_id]) if params[:plan_id].present?
+    @team.update_attribute(:plan_id, nil) if params[:remove_plan].present?
 
     if params[:player_id].present?
       player = Player.find(params[:player_id])
       params[:remove] ?  @team.players.delete(player) :  (@team.players << player unless @team.players.include?(player))
     end
+
     render :json => @team
   end
 
